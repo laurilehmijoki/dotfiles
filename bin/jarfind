@@ -1,0 +1,44 @@
+#!/bin/bash
+# credit: Ari S
+
+unset JAVA_TOOL_OPTIONS
+
+dir=.
+if [[ -d $1 ]]; then
+	dir=$1;
+	shift
+fi
+
+if [[ -z $1 ]]; then
+  echo "Usage: jarfind [directory] <pattern>"
+  exit
+fi
+
+_dot_count=0
+function print_dot() {
+	((_dot_count++))
+	if [[ "0" == $((_dot_count%5)) ]]; then
+		echo -n '|' >&2
+	else
+		echo -n . >&2
+	fi
+}
+
+function after_dots() {
+  if [[ "0" != "$_dot_count" ]]; then
+      echo >&2
+      _dot_count=0
+  fi
+}
+
+for jar in $(find $dir -type f -name "*.jar"); do 
+  #if [[ -n $(jar -L tf $jar|grep $1) ]]; then 
+  if [[ -n $(unzip -l $jar 2> /dev/null|grep $1) ]]; then 
+    after_dots
+    echo $jar 
+  else
+    print_dot
+  fi
+done
+
+after_dots

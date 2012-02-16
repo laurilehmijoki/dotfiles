@@ -18,4 +18,4 @@ if [ -z $end ]; then
   end=99
 fi
 
-sed -n "${start},${end}p" ~/.yogasutras/yoga-sutra-patanjali-$pada
+echo -e "\033[1m$(sed -n "${start},${end}p" ~/.yogasutras/yoga-sutra-patanjali-$pada)\033[0m"

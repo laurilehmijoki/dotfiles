@@ -18,4 +18,4 @@ if [ -z $end ]; then
   end=99
 fi
 
-sed -n "${start},${end}p" yoga-sutra-patanjali-$pada
+sed -n "${start},${end}p" ~/.yogasutras/yoga-sutra-patanjali-$pada

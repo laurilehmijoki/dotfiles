@@ -11,6 +11,9 @@ fi
 
 if [[ -z $1 ]]; then
   echo "Usage: jarfind [directory] <pattern>"
+  echo ""
+  echo "Prints the names of the .jar files that contain file(s) matching the <pattern>"
+  echo ""
   exit
 fi
 

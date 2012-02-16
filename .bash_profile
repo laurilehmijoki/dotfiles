@@ -12,3 +12,7 @@ if [ "$(uname)" == "Darwin" ] ; then
   export PS1="\[\e[0;35m\]\A\[\e[m\] \[\e[1;32m\]\W\[\e[m\] $ "
 fi
 
+# print some yoga sutras
+echo ""
+~/.yogasutras/echo-sutras 1 1 3
+echo ""

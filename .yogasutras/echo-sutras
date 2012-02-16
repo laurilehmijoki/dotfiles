@@ -1,0 +1,21 @@
+#!/bin/bash
+
+if [ -z $1 -a -z $2 ]; then
+  echo "Usage: echo-sutras <pada> [<start> [<end>]]"
+  echo ""
+  echo "Example: 'echo-sutras 1 1 5' will print the sutras 1–5 from the first chapter"
+  exit 1
+fi
+
+pada=$1
+start=$2
+end=$3
+
+if [ -z $start ]; then
+  start=1
+fi
+if [ -z $end ]; then
+  end=99
+fi
+
+sed -n "${start},${end}p" yoga-sutra-patanjali-$pada

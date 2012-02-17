@@ -14,5 +14,5 @@ fi
 
 # print some yoga sutras
 echo ""
-~/.yogasutras/echo-sutras 1 1 3
+~/.yogasutras/bookmark-reader.rb
 echo ""

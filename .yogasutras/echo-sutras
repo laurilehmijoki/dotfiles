@@ -4,6 +4,7 @@ if [ -z $1 -a -z $2 ]; then
   echo "Usage: echo-sutras <pada> [<start> [<end>]]"
   echo ""
   echo "Example: 'echo-sutras 2 1 5' will print the sutras 1–5 from the second chapter"
+  echo "Example: 'echo-sutras 2 1' will print the sutra 1 from the second chapter"
   exit 1
 fi
 
@@ -15,7 +16,7 @@ if [ -z $start ]; then
   start=1
 fi
 if [ -z $end ]; then
-  end=99
+  end=$start
 fi
 
 echo -e "\033[1m$(sed -n "${start},${end}p" ~/.yogasutras/yoga-sutra-patanjali-$pada)\033[0m"

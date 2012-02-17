@@ -19,4 +19,5 @@ if [ -z $end ]; then
   end=$start
 fi
 
-echo -e "\033[1m$(sed -n "${start},${end}p" ~/.yogasutras/yoga-sutra-patanjali-$pada)\033[0m"
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+echo -e "\033[1m$(sed -n "${start},${end}p" $DIR/yoga-sutra-patanjali-$pada)\033[0m"

@@ -12,6 +12,8 @@
     co = checkout
     di = diff
     dc = diff --cached
+    dr = "!git fetch && git log master..origin/master"
+    dr2 = "!git fetch && git log $1..$2"
     amend = commit --amend
     aa = add --all
     r = !git l -20

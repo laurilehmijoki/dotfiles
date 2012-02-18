@@ -1,15 +1,24 @@
+set ignorecase " Eg /-style searches will ignore case
+set smartcase
+set title " In xterm, set the name of the current file as title
+set scrolloff=3 " More context around cursor
 set smartindent
 set tabstop=2
 set shiftwidth=2
 set expandtab
+set hlsearch " Highlight hits
+set incsearch " ...dynamically as they are typed.
+set number " Show line numbers
+set ruler " Show position at the bottom right corner
+set visualbell " Disable audio bell
 
 syntax on
 
-" Highlight hits
-set hlsearch
+filetype on
+filetype plugin on
+filetype indent on
 
-" Show line numbers
-set number 
+let mapleader = "," " , is more handy than the default leader \
 
 " Press F4 to toggle highlighting on/off, and show current value.
 noremap <F4> :set hlsearch! hlsearch?<CR>
@@ -22,6 +31,9 @@ noremap <Up>    <nop>
 noremap <Down>  <nop>
 noremap <Left>  <nop>
 noremap <Right> <nop>
+
+nnoremap <C-e> 3<C-e> " Scroll the viewpoint faster
+nnoremap <C-y> 3<C-y>
 
 " Save the current file and run it
 function! SaveAndRun()

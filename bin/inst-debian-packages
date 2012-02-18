@@ -1,0 +1,11 @@
+#!/bin/bash
+
+which apt-get >/dev/null
+if [ "$?" -ne 0 ]; then echo "apt-get missing - aborting..."; exit 1; fi 
+
+packages=( ruby ruby-dev git tmux vim )
+
+for package in ${packages[@]}
+do
+  sudo apt-get install -y ${package}
+done

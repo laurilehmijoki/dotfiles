@@ -52,7 +52,7 @@ function! Count_words() range
   echo "found ".n." words"
 endfunction
 
-if exists("CommandTFlush")
+if exists("CommandT")
   " Re-index the Command-T index on focus and file save
   augroup CommandTExtension
     autocmd!

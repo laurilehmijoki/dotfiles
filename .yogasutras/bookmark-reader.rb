@@ -5,20 +5,25 @@ require 'yaml'
 
 def random_bookmark
   sutra_bookmarks = YAML::load(File.open(File.dirname(__FILE__)+'/sutra-bookmarks.yml')) # Read the bookmarks from the YAML file
-  pada = 1 + rand(sutra_bookmarks.length) # Pick a random pada
-  bookmarks = sutra_bookmarks["Pada #{pada}"]
-  bookmark = bookmarks[rand(bookmarks.length)] # Pick a random bookmark within the pada
-  
-  if bookmark.to_s.match(/^\d+$/) 
-    # The bookmark is an integer, which refers to a sutra
-    sutra_number = bookmark.to_i 
-    puts `#{File.dirname(__FILE__)}/echo-sutras #{pada} #{sutra_number}`
-  else
-    # The bookmark is a range of yoga sutras
-    bookmark.scan(/(\d+)-(\d+)/) { |start, stop|
-      puts `#{File.dirname(__FILE__)}/echo-sutras #{pada} #{start} #{stop}`
-    }
+
+  bookmark = sutra_bookmarks[rand(sutra_bookmarks.length)]
+  case bookmark
+    when /^(\d),\s*(\d+)$/
+      pada = $1
+      sutra = $2
+      echo_bookmark(pada, sutra)
+    when /^(\d),\s*(\d+)-(\d+)$/
+      pada = $1
+      start = $2
+      stop = $3
+      echo_bookmark(pada, start, stop)
+    else 
+      abort("Illegal bookmark: #{bookmark}")
   end
+end
+
+def echo_bookmark(pada, start, stop=nil)
+ puts `#{File.dirname(__FILE__)}/echo-sutras #{pada} #{start} #{stop}` 
 end
 
 random_bookmark

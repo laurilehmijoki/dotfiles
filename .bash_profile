@@ -15,7 +15,18 @@ else
   alias ls="ls --color"
 fi
 
-# print some yoga sutras
-echo ""
-~/.yogasutras/bookmark-reader.rb
-echo ""
+$(which rubye > /dev/null)
+if [ $? -eq 0 ]; then
+  HAS_RUBY=1
+fi
+
+if [ -z $HAS_RUBY ]; then
+  echo ""
+  ~/.yogasutras/echo-sutras 1 2
+  echo ""
+else
+  # print some yoga sutras from the bookmarks
+  echo ""
+  ~/.yogasutras/bookmark-reader.rb
+  echo ""
+fi

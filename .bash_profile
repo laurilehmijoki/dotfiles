@@ -15,7 +15,7 @@ else
   alias ls="ls --color"
 fi
 
-$(which rubye > /dev/null)
+$(which ruby > /dev/null)
 if [ $? -eq 0 ]; then
   HAS_RUBY=1
 fi

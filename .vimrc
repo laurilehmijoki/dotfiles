@@ -52,12 +52,14 @@ function! Count_words() range
   echo "found ".n." words"
 endfunction
 
-" Re-index the Command-T index on focus and file save
-augroup CommandTExtension
-  autocmd!
-  autocmd FocusGained * CommandTFlush
-  autocmd BufWritePost * CommandTFlush
-augroup END
+if exists("CommandTFlush")
+  " Re-index the Command-T index on focus and file save
+  augroup CommandTExtension
+    autocmd!
+    autocmd FocusGained * CommandTFlush
+    autocmd BufWritePost * CommandTFlush
+  augroup END
+endif
 
 if exists("did_load_filetypes")
   finish

@@ -38,6 +38,20 @@ noremap <Right> <nop>
 nnoremap <C-e> 3<C-e> " Scroll the viewpoint faster
 nnoremap <C-y> 3<C-y>
 
+" Load abbreviations
+source ~/.vim/abbreviations_ruby.vim
+
+" Alias frequently typo'ed commands
+command! WQ wq
+command! Wq wq
+command! W w
+command! Q q
+
+" For quick editing of .vimrc
+map <leader>v :sp $MYVIMRC<CR><C-W>
+map <silent> <leader>V :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+
+
 " Save the current file and run it
 function! SaveAndRun()
   let cur_file_name = expand('%:p')

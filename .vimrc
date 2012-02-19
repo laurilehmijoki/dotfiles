@@ -11,8 +11,11 @@ set incsearch " ...dynamically as they are typed.
 set number " Show line numbers
 set ruler " Show position at the bottom right corner
 set visualbell " Disable audio bell
+set statusline=%F%m%r%h%w\ [type=%Y]\ [%p%%]\ [len=%L]
+set laststatus=2 " Always show the statusline on the 2nd last row
 
 syntax on
+colorscheme slate " peachpuff is also nice
 
 filetype on
 filetype plugin on

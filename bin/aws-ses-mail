@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+require 'rubygems'
+require 'aws/ses'
+require 'optiflag'
+ 
+module SESClient extend OptiFlagSet
+  flag "key"
+  flag "secret"
+  flag "to"
+  flag "from"
+  flag "subject"
+  flag "body"
+
+  and_process!
+end
+ses = AWS::SES::Base.new(
+  :access_key_id     => ARGV.flags.key, 
+  :secret_access_key => ARGV.flags.secret
+)
+
+mail = {
+  :to=>ARGV.flags.to,
+  :source=>ARGV.flags.from,
+  :subject=>ARGV.flags.subject,
+  :text_body=>ARGV.flags.body
+}
+
+ses.send_email(mail)

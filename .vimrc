@@ -36,6 +36,8 @@ noremap <Down>  <nop>
 noremap <Left>  <nop>
 noremap <Right> <nop>
 
+inoremap jj <Esc> " Esc is so far away without this mapping...
+
 nnoremap <C-e> 3<C-e> " Scroll the viewpoint faster
 nnoremap <C-y> 3<C-y>
 

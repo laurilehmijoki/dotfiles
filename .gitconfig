@@ -14,6 +14,7 @@
     dc = diff --cached
     dr = "!git fetch && git log master..origin/master"
     dr2 = "!git fetch && git log $1..$2"
+    workon = "!git branch $1 && git checkout $1 && git pull origin $1"
     amend = commit --amend
     aa = add --all
     r = !git l -20

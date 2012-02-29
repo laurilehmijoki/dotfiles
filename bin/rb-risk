@@ -1,0 +1,12 @@
+#!/bin/bash
+#Inspired by Gary Bernhardt
+
+if [[ -z $1 ]]; then
+  echo "Usage: `basename $0` dir [moredirs]"
+  echo ""
+  echo "Performs a risk analysis on the Ruby classes and modules in dir(s)."
+  echo "Risk is determined by the amount of references to each class or module."
+  exit 1
+fi
+
+find $@ -iname '*.rb' | xargs grep --no-filename '^[[:space:]]*class\|module\b' | sed 's/^[[:space:]]*//' | cut --delimiter '' --fields 2 | while read class; do echo `grep -rl "\b$class\b" $@ --include="*.rb" | wc -l` $class; done | sort -n

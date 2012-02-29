@@ -16,6 +16,8 @@ else
   alias ack=ack-grep
 fi
 
+alias du-sum="du --max-depth=1 . | sort -n"
+
 $(which ruby > /dev/null)
 if [ $? -eq 0 ]; then
   HAS_RUBY=1

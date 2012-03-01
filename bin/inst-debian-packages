@@ -3,7 +3,7 @@
 which apt-get >/dev/null
 if [ "$?" -ne 0 ]; then echo "apt-get missing - aborting..."; exit 1; fi 
 
-packages=( ruby ruby-dev rubygems rake git-core tmux vim ack-grep )
+packages=( ruby ruby-dev rubygems rake git-core tmux vim ack-grep build-essential )
 
 for package in ${packages[@]}
 do

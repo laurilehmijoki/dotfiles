@@ -4,6 +4,9 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=$PATH:~/bin
 
+export HISTFILESIZE=10000 # Record last 10,000 commands
+export HISTSIZE=10000 # Record last 10,000 commands per session
+
 # "hh:mm current_dir $"
 export PS1="\[\e[0;35m\]\A\[\e[m\] (\[\e[4;33m\]\h\[\e[m\]) \[\e[1;32m\]\W\[\e[m\] $ "
 

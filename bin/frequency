@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+# Counts frequencies for lines in STDIN (inspired by mattmight)
+# Example use case: find the most used Bash commands: `cat ~/.bash_history | frequency | sort -rn | head`
+
+counts = Hash.new
+
+ARGF.each{|arg| 
+  if (counts.keys.include?arg)
+    counts.store(arg, counts.fetch(arg) + 1)
+  else
+    counts.store(arg, 1)
+  end
+}
+
+counts.each_pair{|cmd, count| 
+  puts "#{count} #{cmd}"
+}

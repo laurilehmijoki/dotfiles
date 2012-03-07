@@ -20,6 +20,7 @@ else
 fi
 
 alias du-sum="du --max-depth=1 . | sort -n"
+alias grep="grep --color"
 
 $(which ruby > /dev/null)
 if [ $? -eq 0 ]; then

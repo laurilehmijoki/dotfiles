@@ -26,7 +26,6 @@
 .ssh/
 .subversion/
 .subversion_IDEA/
-.vim
 .vimgolf
 .viminfo
 .swp

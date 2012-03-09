@@ -1,0 +1,15 @@
+#!/bin/bash
+if [ -z "$1" ]; then
+  echo "Usage: `basename $0` int1 int2 int3 ..."
+  exit 1
+fi
+function f() {
+    sleep "$1"
+    echo "$1"
+}
+while [ -n "$1" ]
+do
+    f "$1" &
+    shift
+done
+wait

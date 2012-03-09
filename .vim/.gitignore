@@ -1,0 +1,9 @@
+.VimballRecord
+.netrwhist
+.netrwhist~
+.netrwhisz~
+autoload/
+bundle/
+doc/
+plugin/
+ruby/

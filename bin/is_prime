@@ -1,6 +1,6 @@
 #!/bin/bash
-# This script provides a super inefficient way of figuring out whether a number is a prime
-# The coolness there is the way the prime inference is made; its done with regular expressions.
+# This script provides a super inefficient way of figuring out whether a number is a prime.
+# The coolness here is the way the prime inference is made; its done with regular expressions.
 
 echo "$1" | egrep --silent --only-matching "^[0-9]+$"
 if [ "$?" != "0" ]; then

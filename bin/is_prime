@@ -1,0 +1,18 @@
+#!/bin/bash
+
+echo "$1" | egrep --silent --only-matching "^1*$"
+if [ "$?" != "0" ]; then
+  echo "The input must be an unary number"
+  echo ""
+  echo "Usage: `basename $0` unarynumber"
+  echo "Eg: `basename $0` 1111111"
+  exit 1
+fi
+
+echo "$1" | egrep -v --silent --only-matching '^(11+)\1+$'
+
+if [ "$?" == "0" ]; then
+  echo "yes"
+else
+  echo "no"
+fi

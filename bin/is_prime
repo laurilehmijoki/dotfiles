@@ -1,15 +1,23 @@
 #!/bin/bash
+# This script provides a super inefficient way of figuring out whether a number is a prime
+# The coolness there is the way the prime inference is made; its done with regular expressions.
 
-echo "$1" | egrep --silent --only-matching "^1*$"
+echo "$1" | egrep --silent --only-matching "^[0-9]+$"
 if [ "$?" != "0" ]; then
-  echo "The input must be an unary number"
+  echo "The input must be an integer"
   echo ""
-  echo "Usage: `basename $0` unarynumber"
-  echo "Eg: `basename $0` 1111111"
+  echo "Usage: `basename $0` integer"
+  echo "Eg: `basename $0` 7"
   exit 1
 fi
 
-echo "$1" | egrep -v --silent --only-matching '^(11+)\1+$'
+UNARY=""
+for (( i=1; i<=$1; i++ ))
+do
+  UNARY=${UNARY}1
+done
+
+echo "$UNARY" | egrep -v --silent --only-matching '^(11+)\1+$'
 
 if [ "$?" == "0" ]; then
   echo "yes"

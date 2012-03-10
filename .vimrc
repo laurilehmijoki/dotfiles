@@ -24,6 +24,9 @@ filetype indent on
 
 let mapleader = "," " , is more handy than the default leader \
 
+" Tab for known-word completion
+inoremap <Tab> <C-N>
+
 " Press F4 to toggle highlighting on/off, and show current value.
 noremap <F4> :set hlsearch! hlsearch?<CR>
 

@@ -17,7 +17,7 @@ do
   UNARY=${UNARY}1
 done
 
-echo "$UNARY" | egrep -v --silent --only-matching '^1?$|^(11+)\1+$'
+echo "$UNARY" | egrep -v --silent --only-matching '^1?$|^(11+)\1+$' # Use the regex invented by Abigail
 
 if [ "$?" == "0" ]; then
   echo "yes"

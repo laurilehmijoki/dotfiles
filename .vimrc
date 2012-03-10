@@ -95,6 +95,7 @@ endif
 
 " Look for template based on the file extension
 autocmd! BufNewFile * silent! 0r ~/.vim/templates/tmpl.%:e
+
 if exists("did_load_filetypes")
   finish
 endif

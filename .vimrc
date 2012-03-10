@@ -50,6 +50,7 @@ command! WQ wq
 command! Wq wq
 command! W w
 command! Q q
+command! Qa qa
 
 " For quick editing of .vimrc
 map <leader>v :vs $MYVIMRC<CR><C-W>

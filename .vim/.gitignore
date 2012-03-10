@@ -4,6 +4,4 @@
 .netrwhisz~
 autoload/
 bundle/
-doc/
-plugin/
 ruby/

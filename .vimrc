@@ -55,6 +55,8 @@ command! Q q
 map <leader>v :vs $MYVIMRC<CR><C-W>
 map <silent> <leader>V :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
+map <F8> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --exclude=.git .<CR>
+
 " Save the current file and run it
 function! SaveAndRun()
   let cur_file_name = expand('%:p')

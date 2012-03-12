@@ -24,7 +24,10 @@ fi
 alias du-sum="du --max-depth=1 . | sort -n"
 alias grep="grep --color"
 alias egrep="egrep --color"
+
+# Dir shortcuts
 alias gproj="cd ~/Dropbox/Projects"
+alias gsit="cd ~/Dropbox/Site"
 
 $(which ruby > /dev/null)
 if [ $? -eq 0 ]; then

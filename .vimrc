@@ -24,9 +24,6 @@ filetype indent on
 
 let mapleader = "," " , is more handy than the default leader \
 
-" Tab for known-word completion
-inoremap <Tab> <C-N>
-
 " Press F4 to toggle highlighting on/off, and show current value.
 noremap <F4> :set hlsearch! hlsearch?<CR>
 
@@ -69,6 +66,17 @@ nmap <leader>n :tnext<CR>
 nmap <leader>p :tprev<CR>
 nmap <leader>o :TlistToggle<CR> " Toggle Taglist plugin's menu
 " /Ctags
+
+function! SmartTab() 
+  if strpart( getline('.'), 0, col('.')-1 )=~ '^\s*$'
+    " We are at the beginning of line or after a space
+    return "\<Tab>"
+  else
+    " Use the known-word completion
+    return "\<C-N>"
+  endif
+endfunction
+inoremap <Tab> <C-R>=SmartTab()<CR>
 
 " Save the current file and run it
 function! SaveAndRun()

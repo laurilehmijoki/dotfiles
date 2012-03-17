@@ -24,6 +24,7 @@ fi
 alias du-sum="du --max-depth=1 . | sort -n"
 alias grep="grep --color"
 alias egrep="egrep --color"
+alias rspec="rspec --color"
 
 # Dir shortcuts
 alias gproj="cd ~/Dropbox/Projects"

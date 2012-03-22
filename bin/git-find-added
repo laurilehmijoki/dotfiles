@@ -5,4 +5,4 @@
 
 QUERY=$1; shift
 
-git log -p -- $@ | grep -E "^(commit|\+.*$QUERY)" | grep -B1 "^+.*$QUERY"
+git log -p -- $@ | grep -E "^(commit|\+.*$QUERY)" | grep -B1 "$QUERY"

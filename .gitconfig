@@ -21,6 +21,7 @@
     l = "!. ~/.githelpers && pretty_git_log"
     ra = !git r --all
     pom = push origin master
+    fa = "!git-find-added"
 
 [merge]
     tool = vimdiff

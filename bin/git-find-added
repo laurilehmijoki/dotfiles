@@ -1,0 +1,8 @@
+#!/bin/bash
+# Prints the commits where the QUERY was added or updated
+# Examples: `git-find-added "my_function_name" [PATH]` will print the commits where the string "my_function_name" was either added or updated.
+# Credit: Ari S & LL
+
+QUERY=$1; shift
+
+git log -p -- $@ | grep -E "^(commit|\+.*$QUERY)" | grep -B1 "$QUERY"

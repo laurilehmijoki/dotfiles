@@ -34,7 +34,6 @@ Desktop/
 Documents/
 Downloads/
 Dropbox/
-Install/
 Library/
 Movies/
 Music/
@@ -44,3 +43,4 @@ RubymineProjects/
 VirtualBoxVMs/
 tmp/
 tags
+.scala_history

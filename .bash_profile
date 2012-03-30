@@ -28,7 +28,6 @@ alias rspec="rspec --color"
 
 # Dir shortcuts
 alias gproj="cd ~/Dropbox/Projects"
-alias gsit="cd ~/Dropbox/Sites"
 
 $(which ruby > /dev/null)
 if [ $? -eq 0 ]; then

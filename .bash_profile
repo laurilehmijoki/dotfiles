@@ -16,8 +16,11 @@ export PS1="\[\e[0;35m\]\A\[\e[m\] (\[\e[4;33m\]\h\[\e[m\]) \[\e[1;32m\]\w\[\e[m
 
 if [ "$(uname)" == "Darwin" ] ; then
   # Mac
-
   export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home
+  # Set a shorter Delay until key repeat (requires OS restart to take effect)
+  defaults write NSGlobalDomain InitialKeyRepeat -int 12
+  # Set a blazingly fast keyboard repeat rate (requires OS restart to take effect)
+  defaults write NSGlobalDomain KeyRepeat -int 0.02
 else
   alias ls="ls --color"
   alias ack=ack-grep

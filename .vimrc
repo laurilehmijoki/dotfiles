@@ -119,10 +119,7 @@ endif
 " Look for template based on the file extension
 autocmd! BufNewFile * silent! 0r ~/.vim/templates/tmpl.%:e
 
-if exists("did_load_filetypes")
-  finish
-endif
 augroup filetypedetect
   " For Jekyll posts; its handy to write have auto-wrapping on blog texts
-  au! BufNewFile,BufRead */_posts/*.html set textwidth=100
+  au! BufNewFile,BufRead */_posts/*.markdown set textwidth=80
 augroup END

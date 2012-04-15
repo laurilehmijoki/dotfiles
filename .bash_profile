@@ -24,9 +24,9 @@ if [ "$(uname)" == "Darwin" ] ; then
 else
   alias ls="ls --color"
   alias ack=ack-grep
+  alias du-sum="du --max-depth=1 . | sort -n"
 fi
 
-alias du-sum="du --max-depth=1 . | sort -n"
 alias grep="grep --color"
 alias egrep="egrep --color"
 alias rspec="rspec --color"

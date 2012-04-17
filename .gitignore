@@ -44,3 +44,4 @@ VirtualBoxVMs/
 tmp/
 tags
 .scala_history
+.hours

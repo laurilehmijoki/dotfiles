@@ -122,4 +122,6 @@ autocmd! BufNewFile * silent! 0r ~/.vim/templates/tmpl.%:e
 augroup filetypedetect
   " For Jekyll posts; its handy to write have auto-wrapping on blog texts
   au! BufNewFile,BufRead */_posts/*.markdown set textwidth=80
+
+  au! BufNewFile,BufRead *.scala set textwidth=80
 augroup END

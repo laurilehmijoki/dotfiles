@@ -23,9 +23,8 @@ set directory=~/.vim/.tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 syntax on
 colorscheme slate " peachpuff is also nice
 
-filetype on
-filetype plugin on
-filetype indent on
+" Enable file type detection; do language-dependent indenting
+filetype plugin indent on
 
 let mapleader = "," " , is more handy than the default leader \
 

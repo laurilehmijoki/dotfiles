@@ -15,6 +15,10 @@ set statusline=%F%m%r%h%w\ [type=%Y]\ [%p%%]\ [len=%L]
 set laststatus=2 " Always show the statusline on the 2nd last row
 set incsearch " While typing a search, show where the pattern matches
 
+set backup
+set backupdir=~/.vim/.tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim/.tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+
 syntax on
 colorscheme slate " peachpuff is also nice
 

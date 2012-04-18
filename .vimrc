@@ -40,7 +40,10 @@ noremap <Down>  <nop>
 noremap <Left>  <nop>
 noremap <Right> <nop>
 
-inoremap jj <Esc> " Esc is so far away without this mapping...
+" Esc is so far away without this mapping...
+inoremap jj <Esc>
+imap <c-c> <Esc>
+
 map <Leader>a ggVG " Select all
 
 nnoremap <C-e> 3<C-e> " Scroll the viewpoint faster

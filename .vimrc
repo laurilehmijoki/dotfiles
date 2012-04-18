@@ -118,18 +118,6 @@ function! SaveAndRun()
   endif
 endfunction
 
-" Count the words in a range
-function! Count_words() range
-  let lnum = a:firstline
-  let n = 0
-
-  while lnum <= a:lastline
-    let n = n + len(split(getline(lnum)))
-    let lnum = lnum + 1
-  endwhile
-  echo "found ".n." words"
-endfunction
-
 if exists("CommandT")
   " Re-index the Command-T index on focus and file save
   augroup CommandTExtension

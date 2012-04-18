@@ -142,3 +142,9 @@ autocmd! BufNewFile,BufRead */*.scala set textwidth=80
 
 " For Jekyll posts; its handy to write have auto-wrapping on blog texts
 autocmd! BufNewFile,BufRead */_posts/*.markdown set textwidth=80
+
+" Jump to last cursor position unless it's invalid or in an event handler
+autocmd BufReadPost *
+      \ if line("'\"") > 0 && line("'\"") <= line("$") |
+      \   exe "normal g`\"" |
+      \ endif

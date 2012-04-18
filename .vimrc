@@ -74,6 +74,18 @@ nmap <leader>p :tprev<CR>
 nmap <leader>o :TlistToggle<CR> " Toggle Taglist plugin's menu
 " /Ctags
 
+" Rename current file
+function! RenameFile()
+  let old_name = expand('%')
+  let new_name = input('New file name: ', expand('%'), 'file')
+  if new_name != '' && new_name != old_name
+    exec ':saveas ' . new_name
+    exec ':silent !rm ' . old_name
+    redraw!
+  endif
+endfunction
+map <leader>n :call RenameFile()<cr>
+
 function! SmartTab() 
   if strpart( getline('.'), 0, col('.')-1 )=~ '^\s*$'
     " We are at the beginning of line or after a space

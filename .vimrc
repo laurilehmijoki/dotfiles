@@ -35,10 +35,10 @@ noremap <F4> :set hlsearch! hlsearch?<CR>
 map <F5> :call SaveAndRun()<CR>
 
 " Disable the arrow keys in the normal mode – using them there only slows you down. Use hkjl instead.
-noremap <Up>    <nop>
-noremap <Down>  <nop>
-noremap <Left>  <nop>
-noremap <Right> <nop>
+map <Left> :echo "no!"<cr>
+map <Right> :echo "no!"<cr>
+map <Up> :echo "no!"<cr>
+map <Down> :echo "no!"<cr>
 
 " Esc is so far away without this mapping...
 inoremap jj <Esc>

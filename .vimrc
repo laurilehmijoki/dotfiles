@@ -135,6 +135,7 @@ augroup vimRcExtensions
         \   exe "normal g`\"" |
         \ endif
 
+  " Will be slow with large set of files:
   autocmd FocusGained * CommandTFlush
   autocmd BufWritePost * CommandTFlush
 augroup END

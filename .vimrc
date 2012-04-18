@@ -118,25 +118,23 @@ function! SaveAndRun()
   endif
 endfunction
 
-if exists("CommandT")
-  " Re-index the Command-T index on focus and file save
-  augroup CommandTExtension
-    autocmd!
-    autocmd FocusGained * CommandTFlush
-    autocmd BufWritePost * CommandTFlush
-  augroup END
-endif
+augroup vimRcExtensions
+  autocmd!
 
-" Look for template based on the file extension
-autocmd! BufNewFile * silent! 0r ~/.vim/templates/tmpl.%:e
+  " Look for template based on the file extension
+  autocmd! BufNewFile * silent! 0r ~/.vim/templates/tmpl.%:e
 
-autocmd! BufNewFile,BufRead */*.scala set textwidth=80
+  autocmd! BufNewFile,BufRead */*.scala set textwidth=80
 
-" For Jekyll posts; its handy to write have auto-wrapping on blog texts
-autocmd! BufNewFile,BufRead */_posts/*.markdown set textwidth=80
+  " For Jekyll posts; its handy to write have auto-wrapping on blog texts
+  autocmd! BufNewFile,BufRead */_posts/*.markdown set textwidth=80
 
-" Jump to last cursor position unless it's invalid or in an event handler
-autocmd BufReadPost *
-      \ if line("'\"") > 0 && line("'\"") <= line("$") |
-      \   exe "normal g`\"" |
-      \ endif
+  " Jump to last cursor position unless it's invalid or in an event handler
+  autocmd BufReadPost *
+        \ if line("'\"") > 0 && line("'\"") <= line("$") |
+        \   exe "normal g`\"" |
+        \ endif
+
+  autocmd FocusGained * CommandTFlush
+  autocmd BufWritePost * CommandTFlush
+augroup END

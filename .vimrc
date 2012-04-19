@@ -43,7 +43,7 @@ map <Down> :echo "no!"<cr>
 
 " Esc is so far away without this mapping...
 inoremap jj <Esc>
-imap <c-c> <Esc>
+imap <C-c> <Esc>
 
 map <Leader>a ggVG " Select all
 
@@ -54,9 +54,9 @@ nmap <C-p> :bp<CR> " Previous buffer
 nmap <C-n> :bn<CR> " Next buffer
 
 " Hash rocket
-imap <c-l> <space>=><space>
+imap <C-l> <space>=><space>
 " For generators
-imap <c-j> <space><-<space>
+imap <C-j> <space><-<space>
 
 " Load abbreviations
 source ~/.vim/abbreviations_ruby.vim

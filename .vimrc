@@ -50,8 +50,10 @@ map <Leader>a ggVG " Select all
 nnoremap <C-e> 3<C-e> " Scroll the viewpoint faster
 nnoremap <C-y> 3<C-y>
 
-" Insert a hash rocket with <c-l>
+" Hash rocket
 imap <c-l> <space>=><space>
+" For Scala
+imap <c-j> <space><-<space>
 
 " Load abbreviations
 source ~/.vim/abbreviations_ruby.vim

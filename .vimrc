@@ -50,6 +50,9 @@ map <Leader>a ggVG " Select all
 nnoremap <C-e> 3<C-e> " Scroll the viewpoint faster
 nnoremap <C-y> 3<C-y>
 
+nmap <C-p> :bp<CR> " Previous buffer
+nmap <C-n> :bn<CR> " Next buffer
+
 " Hash rocket
 imap <c-l> <space>=><space>
 " For generators

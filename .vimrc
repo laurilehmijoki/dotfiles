@@ -52,7 +52,7 @@ nnoremap <C-y> 3<C-y>
 
 " Hash rocket
 imap <c-l> <space>=><space>
-" For Scala
+" For generators
 imap <c-j> <space><-<space>
 
 " Load abbreviations

@@ -38,6 +38,3 @@ $(which ruby > /dev/null)
 if [ $? -eq 0 ]; then
   HAS_RUBY=1
 fi
-
-# Fink
-test -r /sw/bin/init.sh && . /sw/bin/init.sh

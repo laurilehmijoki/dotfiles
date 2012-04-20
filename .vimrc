@@ -129,7 +129,7 @@ augroup vimRcExtensions
   " Look for template based on the file extension
   autocmd! BufNewFile * silent! 0r ~/.vim/templates/tmpl.%:e
 
-  autocmd! BufNewFile,BufRead VagrantFile set filetype=ruby
+  autocmd! BufNewFile,BufRead **/manifests/*.pp,VagrantFile set filetype=ruby
 
   autocmd! BufNewFile,BufRead */*.scala set textwidth=80
 

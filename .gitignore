@@ -45,3 +45,4 @@ tmp/
 tags
 .scala_history
 .hours
+.vagrant.d

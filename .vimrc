@@ -129,6 +129,8 @@ augroup vimRcExtensions
   " Look for template based on the file extension
   autocmd! BufNewFile * silent! 0r ~/.vim/templates/tmpl.%:e
 
+  autocmd! BufNewFile,BufRead VagrantFile set filetype=ruby
+
   autocmd! BufNewFile,BufRead */*.scala set textwidth=80
 
   " For Jekyll posts; its handy to write have auto-wrapping on blog texts

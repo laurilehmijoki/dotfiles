@@ -21,9 +21,11 @@ if [ "$(uname)" == "Darwin" ] ; then
   # Set a blazingly fast keyboard repeat rate (requires OS restart to take effect)
   defaults write NSGlobalDomain KeyRepeat -int 0.02
 else
+  # Linux
   alias ls="ls --color"
   alias ack=ack-grep
   alias du-sum="du --max-depth=1 . | sort -n"
+  export TZ=Europe/Helsinki
 fi
 
 alias grep="grep --color"

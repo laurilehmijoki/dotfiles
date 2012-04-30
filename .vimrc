@@ -133,6 +133,8 @@ augroup vimRcExtensions
 
   autocmd! BufNewFile,BufRead */*.scala set textwidth=80
 
+  autocmd! BufNewFile,BufRead */*.md set filetype=Markdown
+
   " For Jekyll posts; its handy to write have auto-wrapping on blog texts
   autocmd! BufNewFile,BufRead */_posts/*.markdown set textwidth=80
 

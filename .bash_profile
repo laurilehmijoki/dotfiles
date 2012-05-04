@@ -1,17 +1,17 @@
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
-export PATH=~/bin:/opt/local/bin:/opt/local/sbin:~/Install/scala/bin:$PATH
+export PATH=~/bin:/opt/local/bin:/opt/local/sbin:$PATH
 
 export HISTFILESIZE=10000 # Record last 10,000 commands
 export HISTSIZE=10000 # Record last 10,000 commands per session
 
 export EDITOR=vim
 
-export SCALA_HOME=~/Install/scala
-
-# "hh:mm current_dir $"
-export PS1="\[\e[0;35m\]\A\[\e[m\] (\[\e[4;33m\]\h\[\e[m\]) \[\e[1;32m\]\w\[\e[m\] $ "
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ @ \1/'
+}
+export PS1='\[\e[0;35m\]\A\[\e[m\] (\[\e[4;33m\]\h\[\e[m\]$(parse_git_branch)) \[\e[1;32m\]\w\[\e[m\] $ '
 
 if [ "$(uname)" == "Darwin" ] ; then
   # Mac
@@ -31,6 +31,7 @@ fi
 alias grep="grep --color"
 alias egrep="egrep --color"
 alias rspec="rspec --color"
+alias sb="source ~/.bash_profile"
 
 # Dir shortcuts
 alias gproj="cd ~/Dropbox/Projects"

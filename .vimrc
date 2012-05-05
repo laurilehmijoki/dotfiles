@@ -135,7 +135,7 @@ augroup vimRcExtensions
 
   autocmd! BufNewFile,BufRead */*.md set filetype=Markdown
 
-  autocmd! BufRead,BufNewFile */nginx/conf/* set ft=nginx
+  autocmd! BufRead,BufNewFile */nginx/*.conf set ft=nginx
 
   " For Jekyll posts; its handy to write have auto-wrapping on blog texts
   autocmd! BufNewFile,BufRead */*.markdown set textwidth=80

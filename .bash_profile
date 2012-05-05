@@ -20,6 +20,7 @@ if [ "$(uname)" == "Darwin" ] ; then
   defaults write NSGlobalDomain InitialKeyRepeat -int 12
   # Set a blazingly fast keyboard repeat rate (requires OS restart to take effect)
   defaults write NSGlobalDomain KeyRepeat -int 0.02
+  defaults write com.apple.finder AppleShowAllFiles TRUE
 else
   # Linux
   alias ls="ls --color"

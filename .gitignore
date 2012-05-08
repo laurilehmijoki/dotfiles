@@ -48,3 +48,5 @@ tags
 .vagrant
 .vagrant*
 VPN
+.gmvault
+gmvault-db

@@ -61,6 +61,8 @@ imap <C-j> <space><-<space>
 " Load abbreviations
 source ~/.vim/abbreviations_ruby.vim
 
+call pathogen#infect()
+
 " Alias frequently typo'ed commands
 command! WQ wq
 command! Wq wq

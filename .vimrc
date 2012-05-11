@@ -22,7 +22,7 @@ set backupdir=~/.vim/.tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim/.tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 syntax on
-colorscheme slate " peachpuff is also nice
+colorscheme koehler " slate, shady and peachpuff are also nice
 
 " Enable file type detection; do language-dependent indenting
 filetype plugin indent on

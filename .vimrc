@@ -21,6 +21,18 @@ set backup
 set backupdir=~/.vim/.tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim/.tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
+" Enable Vundle
+" 1) Install Vundle with `git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle`
+" 2) Install bundles with :BundleInstall
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" After first Vundle run, finish the Command-T installation like so:
+" 1) `~/.vim/bundle/command-t/ruby/command-t/extconf.rb`
+" 2) `~/.vim/bundle/command-t/ruby/command-t/make`
+Bundle 'git://git.wincent.com/command-t.git'
+Bundle 'https://github.com/scrooloose/nerdtree'
+
 syntax on
 colorscheme peachpuff " slate, shady and peachpuff are also nice
 

@@ -141,8 +141,8 @@ endfunction
 
 augroup vimRcExtensions
   autocmd!
-  " Open NERDTree on startup
-  autocmd vimenter * NERDTree
+  " Open NERDTree if no args were given to VIM
+  autocmd vimenter * if !argc() | NERDTree | endif
 
   " Look for template based on the file extension
   autocmd! BufNewFile * silent! 0r ~/.vim/templates/tmpl.%:e

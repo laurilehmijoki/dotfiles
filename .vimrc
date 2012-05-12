@@ -32,6 +32,7 @@ call vundle#rc()
 " 2) `cd ~/.vim/bundle/command-t/ruby/command-t && make`
 Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'https://github.com/scrooloose/nerdtree'
+Bundle 'https://github.com/kchmck/vim-coffee-script.git'
 
 syntax on
 colorscheme peachpuff " slate, shady and peachpuff are also nice

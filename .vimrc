@@ -33,6 +33,7 @@ call vundle#rc()
 Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'https://github.com/scrooloose/nerdtree'
 Bundle 'https://github.com/kchmck/vim-coffee-script.git'
+Bundle 'git://github.com/tpope/vim-surround.git'
 
 syntax on
 colorscheme peachpuff " slate, shady and peachpuff are also nice

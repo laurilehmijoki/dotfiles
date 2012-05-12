@@ -28,8 +28,8 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " After first Vundle run, finish the Command-T installation like so:
-" 1) `~/.vim/bundle/command-t/ruby/command-t/extconf.rb`
-" 2) `~/.vim/bundle/command-t/ruby/command-t/make`
+" 1) `cd ~/.vim/bundle/command-t/ruby/command-t && ruby extconf.rb`
+" 2) `cd ~/.vim/bundle/command-t/ruby/command-t && make`
 Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'https://github.com/scrooloose/nerdtree'
 

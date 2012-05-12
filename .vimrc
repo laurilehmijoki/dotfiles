@@ -70,6 +70,8 @@ imap <C-l> <space>=><space>
 " For generators
 imap <C-j> <space><-<space>
 
+nmap <F3> :NERDTreeToggle()<cr>
+
 " Load abbreviations
 source ~/.vim/abbreviations_ruby.vim
 
@@ -139,6 +141,8 @@ endfunction
 
 augroup vimRcExtensions
   autocmd!
+  " Open NERDTree on startup
+  autocmd vimenter * NERDTree
 
   " Look for template based on the file extension
   autocmd! BufNewFile * silent! 0r ~/.vim/templates/tmpl.%:e

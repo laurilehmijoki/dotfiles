@@ -113,7 +113,7 @@ function! RenameFile()
 endfunction
 map <leader>n :call RenameFile()<cr>
 
-function! SmartTab() 
+function! SmartTab()
   if strpart( getline('.'), 0, col('.')-1 )=~ '^\s*$'
     " We are at the beginning of line or after a space
     return "\<Tab>"
@@ -130,11 +130,11 @@ function! SaveAndRun()
   let is_rspec_file =  matchstr(cur_file_name, '_spec\.rb') " Is an RSpec file?
 
   " Save the file
-  exe ":w" 
+  exe ":w"
   if is_rspec_file == ""
     " The file is not an RSpec file
     " Run it
-    exe "!%:p" 
+    exe "!%:p"
   else
     " Its an RSpec file
     exe "!rspec %:p"
@@ -168,4 +168,7 @@ augroup vimRcExtensions
   " Will be slow with large set of files:
   autocmd FocusGained * CommandTFlush
   autocmd BufWritePost * CommandTFlush
+
+  " Fix trailing whitespaces on every file write
+  autocmd BufWritePost * :FixWhitespace
 augroup END

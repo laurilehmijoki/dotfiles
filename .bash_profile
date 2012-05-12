@@ -33,6 +33,7 @@ alias grep="grep --color"
 alias egrep="egrep --color"
 alias rspec="rspec --color"
 alias sb="source ~/.bash_profile; echo Sourced .bash_profile"
+alias g=git
 
 # Dir shortcuts
 alias gproj="cd ~/Dropbox/Projects"

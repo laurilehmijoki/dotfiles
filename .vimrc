@@ -156,8 +156,7 @@ augroup vimRcExtensions
 
   autocmd! BufRead,BufNewFile */nginx/*.conf set ft=nginx
 
-  " For Jekyll posts; its handy to write have auto-wrapping on blog texts
-  autocmd! BufNewFile,BufRead */*.markdown set textwidth=80
+  autocmd! BufNewFile,BufRead **/*.markdown,**/*.md set textwidth=80
 
   " Jump to last cursor position unless it's invalid or in an event handler
   autocmd BufReadPost *

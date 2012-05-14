@@ -156,7 +156,10 @@ augroup vimRcExtensions
 
   autocmd! BufNewFile,BufRead */*.md set filetype=Markdown
 
-  autocmd! BufRead,BufNewFile */nginx/*.conf set ft=nginx
+  autocmd! BufNewFile,BufRead */nginx/*.conf set ft=nginx
+
+
+  autocmd! BufNewFile,BufRead **/*.js set tabstop=4| set shiftwidth=4
 
   autocmd! BufNewFile,BufRead **/*.markdown,**/*.md set textwidth=80
 

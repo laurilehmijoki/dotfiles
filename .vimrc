@@ -65,6 +65,12 @@ map <Leader>a ggVG " Select all
 nnoremap <C-e> 3<C-e> " Scroll the viewpoint faster
 nnoremap <C-y> 3<C-y>
 
+" Arrows resize windows
+nmap <left>  :3wincmd <<cr>
+nmap <right> :3wincmd ><cr>
+nmap <up>    :3wincmd +<cr>
+nmap <down>  :3wincmd -<cr>
+
 nmap <C-p> :bp<CR> " Previous buffer
 nmap <C-n> :bn<CR> " Next buffer
 

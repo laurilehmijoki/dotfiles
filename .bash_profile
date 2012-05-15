@@ -21,6 +21,7 @@ if [ "$(uname)" == "Darwin" ] ; then
   # Set a blazingly fast keyboard repeat rate (requires OS restart to take effect)
   defaults write NSGlobalDomain KeyRepeat -int 0.02
   defaults write com.apple.finder AppleShowAllFiles TRUE
+  alias du-sum="du -skc *"
 else
   # Linux
   alias ls="ls --color"

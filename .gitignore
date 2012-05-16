@@ -50,3 +50,6 @@ tags
 VPN
 .gmvault
 gmvault-db
+.ivy2
+.sbt
+Install/gmvault-v1.0-beta/

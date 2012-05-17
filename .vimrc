@@ -35,6 +35,7 @@ Bundle 'https://github.com/scrooloose/nerdtree'
 Bundle 'https://github.com/kchmck/vim-coffee-script.git'
 Bundle 'git://github.com/tpope/vim-surround.git'
 Bundle 'https://github.com/groenewege/vim-less.git'
+Bundle 'git://github.com/laurilehmijoki/haskellmode-vim.git'
 
 syntax on
 colorscheme peachpuff " slate, shady and peachpuff are also nice
@@ -181,4 +182,7 @@ augroup vimRcExtensions
 
   " Fix trailing whitespaces on every file write
   autocmd BufWritePost * :FixWhitespace
+
+  " For the haskellmode plugin
+  autocmd Bufenter *.hs compiler ghc
 augroup END

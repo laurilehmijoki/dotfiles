@@ -90,6 +90,7 @@ call pathogen#infect()
 " Alias frequently typo'ed commands
 command! WQ wq
 command! Wq wq
+command! Wa wa
 command! W w
 command! Q q
 command! Qa qa

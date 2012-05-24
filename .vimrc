@@ -21,6 +21,9 @@ set backup
 set backupdir=~/.vim/.tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim/.tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
+" Ignore (works as Command-T ignore list, for example)
+set wildignore+=.git,*.class,.svn,*.jar
+
 " Enable Vundle
 " 1) Install Vundle with `git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle`
 " 2) Install bundles with :BundleInstall

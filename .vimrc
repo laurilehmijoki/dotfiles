@@ -79,6 +79,9 @@ nmap <down>  :3wincmd -<cr>
 nmap <C-p> :bp<CR> " Previous buffer
 nmap <C-n> :bn<CR> " Next buffer
 
+" Locate the current file in NERDTree
+nmap <leader>l :NERDTreeFind<cr>
+
 " Hash rocket
 imap <C-l> <space>=><space>
 " For generators

@@ -1,2 +1,5 @@
 # Search all files
 -a
+
+# Ignore Java / Scala target
+--ignore-dir=target/

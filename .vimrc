@@ -103,17 +103,6 @@ command! Qa qa
 map <leader>v :vs $MYVIMRC<CR><C-W>
 map <silent> <leader>V :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
-" Ctags
-set tags=tags
-map <F9> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --exclude=.git .<CR> :echo "ctags created/updated"<CR>
-nmap <leader>j <C-]> " Jump to tag
-nmap <leader>b <C-T> " Jump Back from tag
-nmap <leader>J :ptselect<CR>
-nmap <leader>n :tnext<CR>
-nmap <leader>p :tprev<CR>
-nmap <leader>o :TlistToggle<CR> " Toggle Taglist plugin's menu
-" /Ctags
-
 " Rename current file
 function! RenameFile()
   let old_name = expand('%')

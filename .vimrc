@@ -50,10 +50,10 @@ filetype plugin indent on
 let mapleader = "," " , is more handy than the default leader \
 
 " Press F4 to toggle highlighting on/off, and show current value.
-noremap <F4> :set hlsearch! hlsearch?<CR>
+noremap <F4> :set hlsearch! hlsearch?<cr>
 
 " Save the current file and run it
-map <F5> :call SaveAndRun()<CR>
+map <F5> :call SaveAndRun()<cr>
 
 " Disable the arrow keys in the normal mode – using them there only slows you down. Use hkjl instead.
 map <Left> :echo "no!"<cr>
@@ -76,8 +76,8 @@ nmap <right> :3wincmd ><cr>
 nmap <up>    :3wincmd +<cr>
 nmap <down>  :3wincmd -<cr>
 
-nmap <C-p> :bp<CR> " Previous buffer
-nmap <C-n> :bn<CR> " Next buffer
+nmap <C-p> :bp<cr> " Previous buffer
+nmap <C-n> :bn<cr> " Next buffer
 
 " Locate the current file in NERDTree
 nmap <leader>l :NERDTreeFind<cr>
@@ -103,8 +103,8 @@ command! Q q
 command! Qa qa
 
 " For quick editing of .vimrc
-map <leader>v :vs $MYVIMRC<CR><C-W>
-map <silent> <leader>V :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+map <leader>v :vs $MYVIMRC<cr><C-W>
+map <silent> <leader>V :source $MYVIMRC<cr>:filetype detect<cr>:exe ":echo 'vimrc reloaded'"<cr>
 
 " Rename current file
 function! RenameFile()
@@ -127,7 +127,7 @@ function! SmartTab()
     return "\<C-N>"
   endif
 endfunction
-inoremap <Tab> <C-R>=SmartTab()<CR>
+inoremap <Tab> <C-R>=SmartTab()<cr>
 
 " Save the current file and run it
 function! SaveAndRun()

@@ -39,6 +39,7 @@ alias g=git
 # Dir shortcuts
 alias gproj="cd ~/Dropbox/Projects"
 alias gdocs="cd ~/Dropbox/Docs"
+alias greak="cd ~/Dropbox/Projects/Reaktor"
 
 $(which ruby > /dev/null)
 if [ $? -eq 0 ]; then

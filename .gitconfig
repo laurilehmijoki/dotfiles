@@ -27,3 +27,5 @@
 [merge]
     tool = vimdiff
 
+[branch]
+	autosetuprebase = always

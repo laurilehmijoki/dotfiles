@@ -11,7 +11,7 @@ set incsearch " ...dynamically as they are typed.
 set number " Show line numbers
 set ruler " Show position at the bottom right corner
 set visualbell " Disable audio bell
-set statusline=%F%m%r%h%w\ [%Y]\ [%p%%]\ [len=%L]\ col=%c
+set statusline=%F%m%r%h%w\ (%Y)\ (%l/%L,%c)
 set laststatus=2 " Always show the statusline on the 2nd last row
 set incsearch " While typing a search, show where the pattern matches
 set cursorline " Underline the current line

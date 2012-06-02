@@ -65,6 +65,7 @@ map <Down> :echo "no!"<cr>
 nmap <S-t> :tabnew<cr>
 nmap <S-n> :tabnext<cr>
 nmap <S-p> :tabprevious<cr>
+nmap <S-c> :tabclose<cr>
 
 " Esc is so far away without this mapping...
 inoremap jj <Esc>

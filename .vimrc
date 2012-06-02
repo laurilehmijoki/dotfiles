@@ -61,6 +61,11 @@ map <Right> :echo "no!"<cr>
 map <Up> :echo "no!"<cr>
 map <Down> :echo "no!"<cr>
 
+" Tab mgmt mappings
+nmap <S-t> :tabnew<cr>
+nmap <S-n> :tabnext<cr>
+nmap <S-p> :tabprevious<cr>
+
 " Esc is so far away without this mapping...
 inoremap jj <Esc>
 imap <C-c> <Esc>

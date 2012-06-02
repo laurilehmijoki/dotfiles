@@ -15,6 +15,7 @@ set statusline=%F%m%r%h%w\ (%Y)\ (%l/%L,%c)
 set laststatus=2 " Always show the statusline on the 2nd last row
 set incsearch " While typing a search, show where the pattern matches
 set cursorline " Underline the current line
+set history=500
 
 " Store temp files in a central spot
 set backup

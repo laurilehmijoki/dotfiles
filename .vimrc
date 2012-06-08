@@ -1,3 +1,4 @@
+set nocompatible
 set ignorecase " Eg /-style searches will ignore case
 set smartcase
 set title " In xterm, set the name of the current file as title
@@ -41,6 +42,8 @@ Bundle 'git://github.com/tpope/vim-surround.git'
 Bundle 'https://github.com/groenewege/vim-less.git'
 Bundle 'git://github.com/laurilehmijoki/haskellmode-vim.git'
 Bundle 'https://github.com/mileszs/ack.vim'
+
+runtime macros/matchit.vim
 
 syntax on
 colorscheme peachpuff " slate, shady and peachpuff are also nice

@@ -17,7 +17,7 @@
     workon = "!git branch $1 && git checkout $1 && git pull origin $1"
     amend = commit --amend
     aa = add --all
-    r = !git l -10
+    r = !git l -15
     l = "!. ~/.githelpers && pretty_git_log"
     ra = !git r --all
     pom = push origin master

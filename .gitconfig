@@ -23,6 +23,7 @@
     pom = push origin master
     pr = pull --rebase
     fa = "!git-find-added"
+    lolpull = "!git stash save && git pull --rebase && git stash pop"
 
 [merge]
     tool = vimdiff

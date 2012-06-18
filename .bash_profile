@@ -15,7 +15,7 @@ export GIT_PS1_SHOWUNTRACKEDFILES=1
 source ~/bin/git-completion.bash
 
 # Prompt
-export PS1='\[\e[0;35m\]\A\[\e[m\] (\[\e[4;33m\]\h\[\e[m\] $(__git_ps1 '%s')) \[\e[1;32m\]\w\[\e[m\] $ '
+export PS1='\[\e[0;35m\]\A\[\e[m\] (\[\e[4;33m\]\h\[\e[m\] @ $(__git_ps1 '%s')) \[\e[1;32m\]\w\[\e[m\] $ '
 
 if [ "$(uname)" == "Darwin" ] ; then
   # Mac

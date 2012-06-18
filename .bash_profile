@@ -8,10 +8,14 @@ export HISTSIZE=10000 # Record last 10,000 commands per session
 
 export EDITOR=vim
 
-parse_git_branch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ @ \1/'
-}
-export PS1='\[\e[0;35m\]\A\[\e[m\] (\[\e[4;33m\]\h\[\e[m\]$(parse_git_branch)) \[\e[1;32m\]\w\[\e[m\] $ '
+# Git stuff
+export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWSTASHSTATE=1
+export GIT_PS1_SHOWUNTRACKEDFILES=1
+source ~/bin/git-completion.bash
+
+# Prompt
+export PS1='\[\e[0;35m\]\A\[\e[m\] (\[\e[4;33m\]\h\[\e[m\] $(__git_ps1 '%s')) \[\e[1;32m\]\w\[\e[m\] $ '
 
 if [ "$(uname)" == "Darwin" ] ; then
   # Mac

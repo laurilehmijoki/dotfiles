@@ -56,3 +56,6 @@ Install/gmvault-v1.0-beta/
 .NERDTreeBookmarks
 .backlog
 .mysql_history
+.ghc
+.vim/haskellmode.config
+.vim/plugin/command-e.vim

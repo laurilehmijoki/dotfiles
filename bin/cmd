@@ -1,0 +1,30 @@
+#!/bin/bash -e
+
+action=$1
+script_root=~/bin
+script=$script_root/$2
+
+usage() {
+  echo "Usage: `basename $0` edit script"
+  exit 2
+}
+
+ensureScriptExistsAndIsExecutable() {
+  if [ ! -f $1 ]; then
+    touch $1
+    chmod +x $1
+    echo "#!/bin/bash -e" >> $1
+    echo "" >> $1
+  fi
+}
+
+case "$action" in
+  "edit")
+    ensureScriptExistsAndIsExecutable $script
+    vim $script
+    ;;
+  *)
+    echo Unknown action $action
+    usage
+    ;;
+esac

@@ -5,7 +5,7 @@ filename=$2
 bin=~/bin
 
 usage() {
-  echo "Usage: `basename $0` (edit|ledit) script"
+  echo "Usage: `basename $0` (le|e) script"
   exit 2
 }
 
@@ -24,10 +24,10 @@ edit() {
 }
 
 case "$action" in
-  "ledit")
+  ledit|le)
     script_root=$bin/local
     ;;
-  "edit")
+  edit|e)
     script_root=$bin
     ;;
 esac
@@ -35,10 +35,10 @@ esac
 script=$script_root/$filename
 
 case "$action" in
-  "edit")
+  ledit|le)
     edit $script
     ;;
-  "ledit")
+  edit|e)
     edit $script
     ;;
   *)

@@ -1,16 +1,20 @@
 #!/bin/bash -e
 
-action=$1
-filename=$2
-bin=~/bin
-editor=vim
-
 usage() {
-  echo "Usage: `basename $0` (le|e) script"
+  echo "Usage: `basename $0` <command> script"
+  echo "  commands"
+  echo "    e  – edit a Bash script in $bin"
+  echo "    le – edit a Bash script in $bin_local"
   exit 2
 }
 
-ensureScriptExistsAndIsExecutable() {
+action=$1
+filename=$2
+bin=~/bin
+bin_local=$bin/local
+editor=vim
+
+createScriptIfItDoesntExist() {
   if [ ! -f $1 ]; then
     touch $1
     chmod +x $1
@@ -20,30 +24,22 @@ ensureScriptExistsAndIsExecutable() {
 }
 
 edit() {
-  ensureScriptExistsAndIsExecutable $1
+  createScriptIfItDoesntExist $1
   $editor $1
 }
 
 case "$action" in
-  ledit|le)
-    script_root=$bin/local
+  le)
+    script_root=$bin_local
     ;;
-  edit|e)
+  e)
     script_root=$bin
-    ;;
-esac
-
-script=$script_root/$filename
-
-case "$action" in
-  ledit|le)
-    edit $script
-    ;;
-  edit|e)
-    edit $script
     ;;
   *)
     echo Unknown action $action
     usage
     ;;
 esac
+
+script=$script_root/$filename
+edit $script

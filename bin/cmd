@@ -1,11 +1,11 @@
 #!/bin/bash -e
 
 action=$1
-script_root=~/bin
-script=$script_root/$2
+filename=$2
+bin=~/bin
 
 usage() {
-  echo "Usage: `basename $0` edit script"
+  echo "Usage: `basename $0` (edit|ledit) script"
   exit 2
 }
 
@@ -18,10 +18,28 @@ ensureScriptExistsAndIsExecutable() {
   fi
 }
 
+edit() {
+  ensureScriptExistsAndIsExecutable $1
+  vim $1
+}
+
+case "$action" in
+  "ledit")
+    script_root=$bin/local
+    ;;
+  "edit")
+    script_root=$bin
+    ;;
+esac
+
+script=$script_root/$filename
+
 case "$action" in
   "edit")
-    ensureScriptExistsAndIsExecutable $script
-    vim $script
+    edit $script
+    ;;
+  "ledit")
+    edit $script
     ;;
   *)
     echo Unknown action $action

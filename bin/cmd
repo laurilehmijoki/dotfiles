@@ -3,6 +3,7 @@
 action=$1
 filename=$2
 bin=~/bin
+editor=vim
 
 usage() {
   echo "Usage: `basename $0` (le|e) script"
@@ -20,7 +21,7 @@ ensureScriptExistsAndIsExecutable() {
 
 edit() {
   ensureScriptExistsAndIsExecutable $1
-  vim $1
+  $editor $1
 }
 
 case "$action" in

@@ -44,7 +44,7 @@ alias ed='ed -p "ed> "'
 # Dir shortcuts
 alias gproj="cd ~/Dropbox/Projects"
 alias gdocs="cd ~/Dropbox/Docs"
-alias greak="cd ~/Code/Reaktor"
+alias greak="cd ~/ReaktorCode"
 
 $(which ruby > /dev/null)
 if [ $? -eq 0 ]; then

@@ -18,7 +18,7 @@ createScriptIfItDoesntExist() {
   if [ ! -f $1 ]; then
     touch $1
     chmod +x $1
-    echo "#!/bin/bash -e" >> $1
+    echo "#!/bin/bash -e -x" >> $1
     echo "" >> $1
   fi
 }

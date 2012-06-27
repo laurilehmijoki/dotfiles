@@ -5,6 +5,7 @@ export PATH=~/bin:~/bin/local:/opt/local/bin:/opt/local/sbin:$PATH
 
 export HISTFILESIZE=10000 # Record last 10,000 commands
 export HISTSIZE=10000 # Record last 10,000 commands per session
+export HISTCONTROL=ignoredups
 
 export EDITOR=vim
 

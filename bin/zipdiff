@@ -1,0 +1,18 @@
+#!/bin/bash -e -x
+
+usage() {
+  echo "Usage: `basename $0` zip1 zip2"
+  exit 2
+}
+
+if [ ! -z '$2' ]; then
+  usage
+fi
+
+zip1=$1
+zip2=$2
+diff_html=/tmp/zipdiff.html
+
+java -jar ~/bin/zipdiff-0.4/build/zipdiff.jar -file1 $zip1 -file2 $zip2 -outputfile $diff_html
+
+open $diff_html

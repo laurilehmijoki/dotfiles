@@ -1,0 +1,18 @@
+#!/bin/bash -e
+
+usage() {
+  echo "Usage: `basename $0` <file-name-pattern> <regex> <replacement>"
+  echo ""
+  echo "  For multi-line string substitution on contents of matching files"
+  exit 2
+}
+
+name_pattern=$1
+pattern=$2
+replacement=$3
+
+if [ -z "$3" ]; then
+  usage
+fi
+
+find . -name "$name_pattern" -exec perl -i'' -pne "BEGIN {undef $/} s/$pattern/$replacement/smg" {} \;

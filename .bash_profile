@@ -1,7 +1,6 @@
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
-export PATH=~/bin:~/bin/local:/opt/local/bin:/opt/local/sbin:$HOME/.rvm/bin:$PATH
 
 export HISTFILESIZE=10000 # Record last 10,000 commands
 export HISTSIZE=10000 # Record last 10,000 commands per session
@@ -54,3 +53,5 @@ fi
 
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
+
+[[ -r ~/.bashrc ]] && source ~/.bashrc

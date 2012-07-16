@@ -56,9 +56,6 @@ let mapleader = "," " , is more handy than the default leader \
 " Press F4 to toggle highlighting on/off, and show current value.
 noremap <F4> :set hlsearch! hlsearch?<cr>
 
-" Save the current file and run it
-map <F5> :call SaveAndRun()<cr>
-
 " Disable the arrow keys in the normal mode – using them there only slows you down. Use hkjl instead.
 map <Left> :echo "no!"<cr>
 map <Right> :echo "no!"<cr>
@@ -135,19 +132,69 @@ inoremap <Tab> <C-R>=SmartTab()<cr>
 
 " Save the current file and run it
 function! SaveAndRun()
-  let cur_file_name = expand('%:p')
-  let is_rspec_file =  matchstr(cur_file_name, '_spec\.rb') " Is an RSpec file?
-
   " Save the file
   exe ":w"
-  if is_rspec_file == ""
-    " The file is not an RSpec file
-    " Run it
-    exe "!%:p"
-  else
-    " Its an RSpec file
-    exe "!rspec %:p"
-  endif
+  " Run it
+  exe "!%:p"
+endfunction
+
+" Save the current file and run it
+map <F6> :call SaveAndRun()<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" RUNNING TESTS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"map <leader>t :call RunTestFile()<cr>
+"map <leader>T :call RunNearestTest()<cr>
+map <F5> :call RunTests('')<cr>
+
+function! RunTestFile(...)
+    if a:0
+        let command_suffix = a:1
+    else
+        let command_suffix = ""
+    endif
+
+    " Run the tests for the previously-marked file.
+    let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\)$') != -1
+    if in_test_file
+        call SetTestFile()
+    elseif !exists("t:grb_test_file")
+        return
+    end
+    call RunTests(t:grb_test_file . command_suffix)
+endfunction
+
+function! RunNearestTest()
+    let spec_line_number = line('.')
+    call RunTestFile(":" . spec_line_number . " -b")
+endfunction
+
+function! SetTestFile()
+    " Set the spec file that tests will be run for.
+    let t:grb_test_file=@%
+endfunction
+
+function! RunTests(filename)
+    " Write the file and run tests for the given filename
+    :w
+    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
+    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
+    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
+    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
+    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
+    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
+    if match(a:filename, '\.feature$') != -1
+        exec ":!script/features " . a:filename
+    else
+        if filereadable("script/test")
+            exec ":!script/test " . a:filename
+        elseif filereadable("Gemfile")
+            exec ":!bundle exec rspec --color " . a:filename
+        else
+            exec ":!rspec --color " . a:filename
+        end
+    end
 endfunction
 
 augroup vimRcExtensions

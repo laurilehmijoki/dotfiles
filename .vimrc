@@ -137,16 +137,14 @@ function! SaveAndRun()
   " Run it
   exe "!%:p"
 endfunction
-
-" Save the current file and run it
-map <F6> :call SaveAndRun()<cr>
+map <F5> :call SaveAndRun()<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RUNNING TESTS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"map <leader>t :call RunTestFile()<cr>
-"map <leader>T :call RunNearestTest()<cr>
-map <F5> :call RunTests('')<cr>
+map <leader>r :call RunTestFile()<cr>
+map <leader>R :call RunNearestTest()<cr>
+map <leader>a :call RunTests('')<cr>
 
 function! RunTestFile(...)
     if a:0

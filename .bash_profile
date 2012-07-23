@@ -6,6 +6,8 @@ export HISTFILESIZE=10000 # Record last 10,000 commands
 export HISTSIZE=10000 # Record last 10,000 commands per session
 export HISTCONTROL=ignoredups
 
+export REBEL_HOME=~/Dropbox/Tools/jrebel-5.0.0
+
 export EDITOR=vim
 
 # Git stuff

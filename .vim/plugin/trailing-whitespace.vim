@@ -1,5 +1,5 @@
 " Highlight EOL whitespace, http://vim.wikia.com/wiki/Highlight_unwanted_spaces
-highlight ExtraWhitespace ctermbg=darkred guibg=#382424
+highlight ExtraWhitespace ctermbg=brown guibg=#382424
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=brown guibg=brown
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 " the above flashes annoyingly while typing, be calmer in insert mode

@@ -17,6 +17,7 @@ set laststatus=2 " Always show the statusline on the 2nd last row
 set incsearch " While typing a search, show where the pattern matches
 set cursorline " Underline the current line
 set history=500
+set pastetoggle=<F2> " The no-paste mode disables auto-indenting
 
 " Store temp files in a central spot
 set backup

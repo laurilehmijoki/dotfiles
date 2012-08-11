@@ -43,7 +43,4 @@ alias gproj="cd ~/Dropbox/Projects"
 alias gdocs="cd ~/Dropbox/Docs"
 alias greak="cd ~/ReaktorCode"
 
-# Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
 [[ -r ~/.bashrc ]] && source ~/.bashrc

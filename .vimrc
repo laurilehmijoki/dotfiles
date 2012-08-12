@@ -48,7 +48,7 @@ Bundle 'https://github.com/mileszs/ack.vim'
 runtime macros/matchit.vim
 
 syntax on
-colorscheme peachpuff " slate, shady and peachpuff are also nice
+colorscheme desert " wombat, slate, shady and peachpuff are also nice
 
 " Enable file type detection; do language-dependent indenting
 filetype plugin indent on

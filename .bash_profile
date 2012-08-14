@@ -5,8 +5,6 @@ export HISTFILESIZE=10000 # Record last 10,000 commands
 export HISTSIZE=10000 # Record last 10,000 commands per session
 export HISTCONTROL=ignoredups
 
-export REBEL_HOME=~/Dropbox/Tools/jrebel-5.0.0
-
 export EDITOR=vim
 
 # Git stuff
@@ -20,7 +18,6 @@ export PS1='\[\e[0;35m\]\A\[\e[m\] (\[\e[4;33m\]\h\[\e[m\] @ $(__git_ps1 '%s')) 
 
 if [ "$(uname)" == "Darwin" ] ; then
   # Mac
-  export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home
   alias du-sum="du -skc *"
   source ~/.osx
 else
@@ -44,3 +41,4 @@ alias gdocs="cd ~/Dropbox/Docs"
 alias greak="cd ~/ReaktorCode"
 
 [[ -r ~/.bashrc ]] && source ~/.bashrc
+[[ -r ~/.javaconfigs ]] && source ~/.javaconfigs

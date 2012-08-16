@@ -1,0 +1,4 @@
+#!/bin/bash -e -x
+
+SITE=$1
+wget --mirror --html-extension --convert-links -r -p -U Mozilla $SITE

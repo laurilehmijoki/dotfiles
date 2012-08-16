@@ -1,37 +1,37 @@
 [core]
-    editor = vim
+  editor = vim
 [user]
-    name = Lauri Lehmijoki 
-    email = lauri.lehmijoki@iki.fi 
+  name = Lauri Lehmijoki
+  email = lauri.lehmijoki@iki.fi
 [diff]
 [color]
-    ui = auto
+  ui = auto
 [alias]
-    st = status
-    ci = commit
-    co = checkout
-    di = diff
-    dc = diff --cached
-    dr = "!git fetch && git log master..origin/master"
-    dr2 = "!git fetch && git log $1..$2"
-    workon = "!git branch $1 && git checkout $1 && git pull origin $1"
-    amend = commit --amend
-    aa = add --all
-    r = !git l -15
-    l = "!. ~/.githelpers && pretty_git_log"
-    ra = !git r --all
-    pom = push origin master
-    pr = pull --rebase
-    fa = "!git-find-added"
-    lolpull = "!git stash save && git pull --rebase && git stash pop"
-    lolpush = "!git pull --rebase && git push"
-    defremote = "!git config branch.master.remote origin && git config branch.master.merge refs/heads/master"
-    morning = "git-pull-all"
+  st = status
+  ci = commit
+  co = checkout
+  di = diff
+  dc = diff --cached
+  dr = "!git fetch && git log master..origin/master"
+  dr2 = "!git fetch && git log $1..$2"
+  workon = "!git branch $1 && git checkout $1 && git pull origin $1"
+  amend = commit --amend
+  aa = add --all
+  r = !git l -15
+  l = "!. ~/.githelpers && pretty_git_log"
+  ra = !git r --all
+  pom = push origin master
+  pr = pull --rebase
+  fa = "!git-find-added"
+  lolpull = "!git stash save && git pull --rebase && git stash pop"
+  lolpush = "!git pull --rebase && git push"
+  defremote = "!git config branch.master.remote origin && git config branch.master.merge refs/heads/master"
+  morning = "git-pull-all"
 
 [merge]
-    tool = vimdiff
+  tool = vimdiff
 
 [branch]
-	autosetuprebase = always
+  autosetuprebase = always
 [push]
-	default = current
+  default = current

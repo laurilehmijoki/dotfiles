@@ -1,0 +1,3 @@
+#!/bin/bash -e -x
+
+find `pwd` -name .git -type d -exec git --git-dir={} --work-tree={}/.. pull --rebase \;

@@ -26,6 +26,7 @@
     lolpull = "!git stash save && git pull --rebase && git stash pop"
     lolpush = "!git pull --rebase && git push"
     defremote = "!git config branch.master.remote origin && git config branch.master.merge refs/heads/master"
+    morning = "git-pull-all"
 
 [merge]
     tool = vimdiff

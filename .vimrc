@@ -231,5 +231,5 @@ augroup vimRcExtensions
   autocmd BufWritePost * :FixWhitespace
 
   " For the haskellmode plugin
-  autocmd Bufenter *.hs compiler ghc | set cmdheight=2
+  autocmd Bufenter *.hs compiler ghc | set cmdheight=1
 augroup END

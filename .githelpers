@@ -34,7 +34,17 @@ pretty_git_log() {
 }
 
 # Call pull for all git repositories under the current directory
-
 git_pull_all() {
   find `pwd` -name .git -type d -exec git --git-dir={} --work-tree={}/.. pull --rebase \;
+}
+
+# Usage: `git_find_added QUERY [PATH]`
+#
+# Examples: `git_find_added myfunc` will print the context and the commits where myfunc was either added or updated.
+#
+# Credit: Ari S & LL
+git_find_added() {
+  QUERY=$1; shift
+
+  git log -p -- $@ | grep -E "^(commit|\+.*$QUERY)" | grep -B1 "$QUERY"
 }

@@ -33,3 +33,8 @@ pretty_git_log() {
         less -FXRS
 }
 
+# Call pull for all git repositories under the current directory
+
+git_pull_all() {
+  find `pwd` -name .git -type d -exec git --git-dir={} --work-tree={}/.. pull --rebase \;
+}

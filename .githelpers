@@ -35,7 +35,7 @@ pretty_git_log() {
 
 # Call pull for all git repositories under the current directory
 git_pull_all() {
-  find `pwd` -name .git -type d -exec git --git-dir={} --work-tree={}/.. pull --rebase \;
+  find $1 -name .git -type d -exec git --git-dir={} --work-tree={}/.. pull --rebase \;
 }
 
 # Usage: `git_find_added QUERY [PATH]`

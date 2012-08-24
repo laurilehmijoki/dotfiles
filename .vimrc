@@ -212,6 +212,7 @@ augroup vimRcExtensions
 
   autocmd! BufNewFile,BufRead */nginx/*.conf set ft=nginx
 
+  autocmd! BufNewFile,BufRead */*.json set ft=javascript
 
   autocmd! BufNewFile,BufRead **/*.js set tabstop=4| set shiftwidth=4
 

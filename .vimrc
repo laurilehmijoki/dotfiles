@@ -214,7 +214,9 @@ augroup vimRcExtensions
 
   autocmd! BufNewFile,BufRead */*.json set ft=javascript
 
-  autocmd! BufNewFile,BufRead **/*.js set tabstop=4| set shiftwidth=4
+  autocmd! BufNewFile,BufRead **/*.js set tabstop=2| set shiftwidth=2
+
+  autocmd! BufNewFile,BufRead **/*.coffee set tabstop=2| set shiftwidth=2
 
   autocmd! BufNewFile,BufRead **/*.markdown,**/*.md set textwidth=80
 

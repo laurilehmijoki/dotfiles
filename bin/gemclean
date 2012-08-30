@@ -1,4 +1,4 @@
 #!/bin/bash -e -x
 
 echo "Uninstalling all Ruby Gems..."
-gem list | cut -d " " -f 1 | sudo xargs gem uninstall -aIx
+gem list | cut -d " " -f 1 | xargs gem uninstall -aIx

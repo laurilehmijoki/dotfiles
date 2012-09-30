@@ -1,0 +1,43 @@
+#!/bin/bash
+
+if [[ -z $1 ]]; then
+  echo "Usage: `basename $0` <command>"
+  echo ""
+  echo "Eg: `basename $0` ./run-tests.sh"
+  exit 1
+fi
+
+command_to_run_on_file_change=$1
+ignore_pattern=/.git/
+
+function list_mtimes_and_file_names() {
+  file_count=0
+  for file in `find . | grep -v "$ignore_pattern"`; do
+    file_count=`expr $file_count + 1`
+    mtime_and_file_name=`stat -f "%m %N" $file`
+    mtimes_and_file_names[$file_count]=$mtime_and_file_name
+  done
+}
+
+function print_changed_files() {
+  list_mtimes_and_file_names
+  at_least_one_file_changed=false
+  last_run=$1
+  for mtime_and_file_name in "${mtimes_and_file_names[@]}"; do
+    mtime=`echo $mtime_and_file_name | cut -d " " -f 1`
+    file_name=`echo $mtime_and_file_name | cut -d " " -f 2`
+    if [ "$mtime" -ge "$last_run" ]; then
+      echo File \"$file_name\" changed
+      at_least_one_file_changed=true
+    fi
+  done
+  if $at_least_one_file_changed ; then
+    eval "$command_to_run_on_file_change"
+  fi
+}
+
+while [ true ]; do
+  now=`date +%s`
+  sleep 1
+  print_changed_files $now
+done

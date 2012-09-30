@@ -19,7 +19,7 @@ function list_mtimes_and_file_names() {
   done
 }
 
-function print_changed_files() {
+function run_cmd_on_file_change() {
   list_mtimes_and_file_names
   at_least_one_file_changed=false
   last_run=$1
@@ -39,5 +39,5 @@ function print_changed_files() {
 while [ true ]; do
   now=`date +%s`
   sleep 1
-  print_changed_files $now
+  run_cmd_on_file_change $now
 done

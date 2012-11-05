@@ -48,7 +48,7 @@ Bundle 'git://github.com/scrooloose/syntastic.git'
 runtime macros/matchit.vim
 
 syntax on
-colorscheme desert " wombat, slate, shady and peachpuff are also nice
+colorscheme shady " wombat, slate, desert and peachpuff are also nice
 
 " Enable file type detection; do language-dependent indenting
 filetype plugin indent on

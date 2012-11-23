@@ -25,8 +25,7 @@
   fa = "!. ~/.githelpers && git_find_added"
   lolpull = "!git stash save && git pull --rebase && git stash pop"
   lolpush = "!git pull --rebase && git push"
-  defremote = "!git config branch.master.remote origin && git config branch.master.merge refs/heads/master"
-  morning = "!. ~/.githelpers && git_pull_all"
+  forceclean = "!git co . && git clean -fd"
 
 [merge]
   tool = vimdiff

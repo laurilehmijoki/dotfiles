@@ -69,3 +69,6 @@ ReaktorCode
 .s3cfg
 .ri
 .darcs
+.cache
+.config
+.local

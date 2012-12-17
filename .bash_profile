@@ -36,7 +36,11 @@ alias grep="grep --color"
 alias egrep="egrep --color"
 alias rspec="rspec --color"
 alias sb="source ~/.bash_profile; echo Sourced .bash_profile"
+
 alias g=git
+complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null \
+      || complete -o default -o nospace -F _git g # Enable git auto-complete for g
+
 alias ed='ed -p "ed> "'
 
 # Dir shortcuts

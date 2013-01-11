@@ -72,3 +72,5 @@ ReaktorCode
 .cache
 .config
 .local
+.puppet
+.crema-sites

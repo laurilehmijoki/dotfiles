@@ -72,5 +72,7 @@ ReaktorCode
 .cache
 .config
 .local
-.puppet
 .crema-sites
+.puppet
+.viminfo.tmp
+.viminfz.tmp

@@ -6,6 +6,8 @@ export HISTSIZE=10000 # Record last 10,000 commands per session
 export HISTCONTROL=ignoredups
 
 export EDITOR=vim
+LC_ALL="en_US.UTF-8"
+export LC_ALL
 
 # Git stuff
 export GIT_PS1_SHOWDIRTYSTATE=1

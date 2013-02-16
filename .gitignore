@@ -77,3 +77,4 @@ ReaktorCode
 .viminfo.tmp
 .viminfz.tmp
 .bower
+.node-gyp

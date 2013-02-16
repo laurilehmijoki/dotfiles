@@ -3,4 +3,5 @@
 
 RVM=$HOME/.rvm/bin
 TOOLS=$HOME/Dropbox/Tools/bin
-export PATH=~/bin:~/bin/local:/opt/local/bin:/opt/local/sbin:$RVM:$TOOLS:$PATH
+NPM=/usr/local/share/npm/bin 
+export PATH=~/bin:~/bin/local:/opt/local/bin:/opt/local/sbin:$RVM:$TOOLS:$NPM:$PATH

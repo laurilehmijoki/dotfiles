@@ -26,7 +26,7 @@ fi
 
 if [ "$(uname)" == "Darwin" ] ; then
   # Mac
-  alias du-sum="du -skc *"
+  alias du-sum="du -skc * | sort -n"
   source ~/.osx
 else
   # Linux

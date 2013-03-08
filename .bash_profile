@@ -4,6 +4,8 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 export HISTFILESIZE=10000 # Record last 10,000 commands
 export HISTSIZE=10000 # Record last 10,000 commands per session
 export HISTCONTROL=ignoredups
+shopt -s histappend # Append history
+PROMPT_COMMAND='history -a' # Flush history on new prompt
 
 export EDITOR=vim
 LC_ALL="en_US.UTF-8"

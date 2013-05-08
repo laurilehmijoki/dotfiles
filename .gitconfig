@@ -26,6 +26,7 @@
   lolpull = "!git stash save && git pull --rebase && git stash pop"
   lolpush = "!git pull --rebase && git push"
   fc = "!git reset head && git co . && git clean -fd"
+  diffc = "!git diff --cached"
 
 [merge]
   tool = vimdiff

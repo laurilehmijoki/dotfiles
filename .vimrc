@@ -18,6 +18,7 @@ set incsearch " While typing a search, show where the pattern matches
 set history=500
 set pastetoggle=<F2> " The no-paste mode disables auto-indenting
 set clipboard+=unnamed " Always yank/delete to system clipboard
+set virtualedit=block
 
 " Store temp files in a central spot
 set backup

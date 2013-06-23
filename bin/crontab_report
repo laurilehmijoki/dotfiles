@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 def if_older_than(age_in_seconds, task_name, &operation)
-  last_printed_file = "/#{ENV['TMPDIR']}/record-#{task_name}"
+  last_printed_file = "#{ENV['TMPDIR'] || '/tmp'}/record-#{task_name}"
   unless File.exists?(last_printed_file)
     `touch #{last_printed_file}`
   end

@@ -1,3 +1,20 @@
+# Dotfiles
+
+<http://lauri.lehmijoki.net/en/nerd/on-importance-of-having-dotfiles-in-github.html>
+
+## Setup
+
+````bash
+cd ~ 
+git init
+git remote add origin https://github.com/laurilehmijoki/dotfiles.git # or git@github.com:laurilehmijoki/dotfiles.git
+git pull -u origin master
+````
+
+## VIM
+
+* See `.vimrc` for instructions on installing plugins
+
 ## Cronjobs
 
 ### Monitoring

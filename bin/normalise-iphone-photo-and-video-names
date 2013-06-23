@@ -2,9 +2,9 @@
 require 'fileutils'
 require 'logger'
 
-workdir = ARGV[0]
+dir = ARGV[0]
 
-unless workdir
+unless dir
   puts "USAGE: #{File.basename(__FILE__)} [DIR]"
   puts ''
   puts 'Renames files like "Photo 24.1.2013 9.39.59.jpeg" to "2013-01-24 09.30.59.jpeg"'
@@ -31,7 +31,9 @@ def log(msg)
   logger.info msg
 end
 
-Dir.glob(workdir + '/*').each do |photo|
+Dir.chdir dir
+
+Dir.glob('*').each do |photo|
   match = photo.match(/(Photo|Video) (\d+)\.(\d+)\.(\d+) (\d+)\.(\d+)\.(\d+)\.(\w+)/)
   if match
     day_of_month = pad_with_zeros match[2]
@@ -43,6 +45,6 @@ Dir.glob(workdir + '/*').each do |photo|
     format = match[8]
     dest =  "#{year}-#{month}-#{day_of_month} #{hours}.#{minutes}.#{seconds}.#{format}"
     FileUtils.mv(photo, dest)
-    log "Renamed #{photo} to #{dest} in #{File.expand_path(workdir)}"
+    log "Renamed #{photo} to #{dest} in #{File.expand_path(dir)}"
   end
 end

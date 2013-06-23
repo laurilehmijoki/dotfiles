@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 require 'fileutils'
+require 'logger'
 
 workdir = ARGV[0]
 
@@ -22,6 +23,14 @@ def pad_with_zeros(int_as_string)
   end
 end
 
+def log(msg)
+  logger = Logger.new(STDOUT)
+  logger.formatter = proc do |severity, datetime, progname, msg|
+    "(#{File.basename(__FILE__)}) #{datetime}: #{msg}\n"
+  end
+  logger.info msg
+end
+
 Dir.glob(workdir + '/*').each do |photo|
   match = photo.match(/(Photo|Video) (\d+)\.(\d+)\.(\d+) (\d+)\.(\d+)\.(\d+)\.(\w+)/)
   if match
@@ -34,6 +43,6 @@ Dir.glob(workdir + '/*').each do |photo|
     format = match[8]
     dest =  "#{year}-#{month}-#{day_of_month} #{hours}.#{minutes}.#{seconds}.#{format}"
     FileUtils.mv(photo, dest)
-    puts "Renamed #{photo} to #{dest}"
+    log "Renamed #{photo} to #{dest} in #{File.expand_path(workdir)}"
   end
 end

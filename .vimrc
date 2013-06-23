@@ -23,6 +23,7 @@ set virtualedit=block
 " Store temp files in a central spot
 set backup
 set backupdir=~/.vim/.tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set backupskip=/tmp/*,/private/tmp/* " Otherwise crontab editing fails
 set directory=~/.vim/.tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 " Ignore (works as Command-T ignore list, for example)

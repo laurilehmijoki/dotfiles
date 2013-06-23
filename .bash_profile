@@ -55,3 +55,4 @@ alias greak="cd ~/ReaktorCode"
 [[ -r ~/.bashrc ]] && source ~/.bashrc
 [[ -r ~/.javaconfigs ]] && source ~/.javaconfigs
 [[ -r ~/Dropbox/Security/aws.credentials ]] && source ~/Dropbox/Security/aws.credentials
+~/bin/crontab_report

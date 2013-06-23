@@ -1,0 +1,31 @@
+#!/usr/bin/env ruby
+
+def if_older_than(age_in_seconds, task_name, &operation)
+  last_printed_file = "/#{ENV['TMPDIR']}/record-#{task_name}"
+  unless File.exists?(last_printed_file)
+    `touch #{last_printed_file}`
+  end
+
+  react = File.mtime(last_printed_file) < (Time.new - age_in_seconds)
+
+  if react
+    operation.call
+    `touch #{last_printed_file}`
+  end
+end
+
+cronlog_print_interval_in_seconds = 60 * 60 * 24
+if_older_than(cronlog_print_interval_in_seconds, 'cronjob-log') {
+  crontab_log = ENV['HOME'] + '/.crontab.log'
+  if File.exists?(crontab_log)
+    unseen_log_entries = File.mtime(crontab_log) < (Time.new - cronlog_print_interval_in_seconds)
+    puts "#{crontab_log}:"
+    puts `head #{crontab_log}` if unseen_log_entries
+  end
+}
+
+crontab_print_interval_in_seconds = 60 * 60 * 24
+if_older_than(crontab_print_interval_in_seconds, 'crontab') {
+  puts 'crontab -l:'
+  puts `crontab -l`
+}

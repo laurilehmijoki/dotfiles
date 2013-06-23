@@ -37,6 +37,7 @@ call vundle#rc()
 
 " After first Vundle run, finish the Command-T installation like so:
 " 1) `cd ~/.vim/bundle/command-t/ruby/command-t && ruby extconf.rb`
+" 2) `which rvm && rvm use system # Use the Ruby against which VIM was linked`
 " 2) `cd ~/.vim/bundle/command-t/ruby/command-t && make`
 Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'https://github.com/scrooloose/nerdtree'

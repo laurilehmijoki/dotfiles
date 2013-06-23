@@ -21,6 +21,7 @@ git pull -u origin master
 #### Command-T
 
     cd ~/.vim/bundle/command-t/ruby/command-t
+    which rvm && rvm use system # Use the Ruby against which VIM was linked
     ruby extconf.rb
     make
 

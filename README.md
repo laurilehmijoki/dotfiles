@@ -13,7 +13,16 @@ git pull -u origin master
 
 ## VIM
 
-* See `.vimrc` for instructions on installing plugins
+### Installing plugins
+
+    git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+    vim -c 'BundleInstall'
+
+#### Command-T
+
+    cd ~/.vim/bundle/command-t/ruby/command-t
+    ruby extconf.rb
+    make
 
 ## Cronjobs
 

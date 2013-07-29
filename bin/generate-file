@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+megabytes = ARGV[0]
+unless (megabytes and megabytes.match(/\d{1,3}/))
+  puts "Usage: #{File.basename __FILE__} <megabytes>"
+  puts ""
+  puts "This script will generate a file of size <megabytes>"
+  exit 1
+end
+
+`dd if=/dev/zero of=testfile_size_#{megabytes}mb bs=#{megabytes.to_i * 1024 * 1000} count=1`

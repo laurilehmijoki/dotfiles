@@ -1,2 +1,4 @@
 # Ignore Java / Scala target
 --ignore-dir=target/
+
+--ignore-dir=output/

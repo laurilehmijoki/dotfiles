@@ -4,6 +4,7 @@ autocmd ColorScheme * highlight ExtraWhitespace ctermbg=brown guibg=brown
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 " the above flashes annoyingly while typing, be calmer in insert mode
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd InsertLeave * match ExtraWhitespace / \+/ " Highlight the null character (alt+space)
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 
 function! s:FixWhitespace(line1,line2)

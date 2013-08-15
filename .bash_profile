@@ -51,6 +51,7 @@ alias ed='ed -p "ed> "'
 alias gproj="cd ~/Dropbox/Projects"
 alias gdocs="cd ~/Dropbox/Docs"
 alias greak="cd ~/ReaktorCode"
+alias gr=greak
 
 [[ -r ~/.bashrc ]] && source ~/.bashrc
 [[ -r ~/.javaconfigs ]] && source ~/.javaconfigs

@@ -53,6 +53,8 @@ alias gdocs="cd ~/Dropbox/Docs"
 alias greak="cd ~/ReaktorCode"
 alias gr=greak
 
+alias aa="ack --all"
+
 [[ -r ~/.bashrc ]] && source ~/.bashrc
 [[ -r ~/.javaconfigs ]] && source ~/.javaconfigs
 [[ -r ~/Dropbox/Security/aws.credentials ]] && source ~/Dropbox/Security/aws.credentials

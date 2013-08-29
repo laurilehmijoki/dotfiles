@@ -27,6 +27,7 @@
   lolpush = "!git pull --rebase && git push"
   fc = "!git reset head && git co . && git clean -fd"
   diffc = "!git diff --cached"
+  shf = "!git show --pretty="format:" --name-only"
 
 [merge]
   tool = vimdiff

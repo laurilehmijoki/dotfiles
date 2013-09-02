@@ -49,6 +49,7 @@ alias ed='ed -p "ed> "'
 
 # Dir shortcuts
 alias gproj="cd ~/Dropbox/Projects"
+alias gp=gproj
 alias gdocs="cd ~/Dropbox/Docs"
 alias greak="cd ~/ReaktorCode"
 alias gr=greak

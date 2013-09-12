@@ -84,3 +84,8 @@ ReaktorCode
 .nbprofiler
 Install
 hours-autoupdate.log
+*cron*
+.gnupg
+.sqlite*
+mbox
+.idea*

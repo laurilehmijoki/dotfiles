@@ -23,6 +23,7 @@
   pom = push origin master
   pr = pull --rebase
   fa = "!. ~/.githelpers && git_find_added"
+  fr = "!. ~/.githelpers && git_find_removed"
   lolpull = "!git stash save && git pull --rebase && git stash pop"
   lolpush = "!git pull --rebase && git push"
   fc = "!git reset head && git co . && git clean -fd"

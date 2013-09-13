@@ -48,3 +48,14 @@ git_find_added() {
 
   git log -p -- $@ | grep -E "^(commit|\+.*$QUERY)" | grep -B1 "$QUERY"
 }
+
+# Usage: `git_find_removed QUERY [PATH]`
+#
+# Examples: `git_find_moreved myfunc` will print the context and the commits where myfunc was removed.
+#
+# Credit: Ari S & LL
+git_find_removed() {
+  QUERY=$1; shift
+
+  git log -p -- $@ | grep -E "^(commit|\-\s.*$QUERY)" | grep -B1 "$QUERY"
+}

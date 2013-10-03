@@ -89,3 +89,4 @@ hours-autoupdate.log
 .sqlite*
 mbox
 .idea*
+.lein

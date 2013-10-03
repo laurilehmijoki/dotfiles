@@ -46,6 +46,7 @@ Bundle 'git://github.com/tpope/vim-surround.git'
 Bundle 'https://github.com/groenewege/vim-less.git'
 Bundle 'git://github.com/laurilehmijoki/haskellmode-vim.git'
 Bundle 'https://github.com/mileszs/ack.vim'
+Bundle 'https://github.com/guns/vim-clojure-static.git'
 
 runtime macros/matchit.vim
 

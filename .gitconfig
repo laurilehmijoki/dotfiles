@@ -32,6 +32,7 @@
 
 [merge]
   tool = vimdiff
+	ff = false
 
 [branch]
   autosetuprebase = always

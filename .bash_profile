@@ -60,3 +60,5 @@ alias aa="ack --all"
 [[ -r ~/.javaconfigs ]] && source ~/.javaconfigs
 [[ -r ~/Dropbox/Security/aws.credentials ]] && source ~/Dropbox/Security/aws.credentials
 ~/bin/crontab_report
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

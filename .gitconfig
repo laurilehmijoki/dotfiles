@@ -38,3 +38,6 @@
   autosetuprebase = always
 [push]
   default = current
+
+[tig]
+  show-date = relative

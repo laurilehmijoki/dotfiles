@@ -13,6 +13,7 @@ unless dir
   puts 'Operates only in the DIR; does not recurse into subdirectories.'
   puts ''
   puts 'Reason of existence: it is not possible to change the file name format of iPhone pics and videos'
+  exit 1
 end
 
 def pad_with_zeros(int_as_string)

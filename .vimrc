@@ -216,7 +216,11 @@ augroup vimRcExtensions
 
   autocmd! BufNewFile,BufRead */*.json set ft=javascript
 
+  autocmd! BufNewFile,BufRead */*.hbs set ft=html
+
   autocmd! BufNewFile,BufRead **/*.js set tabstop=2| set shiftwidth=2
+
+  autocmd! BufNewFile,BufRead **/*.py set tabstop=2| set shiftwidth=2
 
   autocmd! BufNewFile,BufRead **/*.java set tabstop=4| set shiftwidth=4
 

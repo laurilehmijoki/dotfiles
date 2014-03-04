@@ -222,6 +222,8 @@ augroup vimRcExtensions
 
   autocmd! BufNewFile,BufRead **/*.py set tabstop=2| set shiftwidth=2
 
+  autocmd! BufNewFile,BufRead **/*.sass set tabstop=2| set shiftwidth=2
+
   autocmd! BufNewFile,BufRead **/*.java set tabstop=4| set shiftwidth=4
 
   autocmd! BufNewFile,BufRead **/*.coffee set tabstop=2| set shiftwidth=2

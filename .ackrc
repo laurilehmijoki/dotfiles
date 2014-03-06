@@ -2,3 +2,4 @@
 #--ignore-dir=target/
 #
 #--ignore-dir=output/
+--type-set=coffee=.coffee

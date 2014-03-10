@@ -55,7 +55,9 @@ alias gdocs="cd ~/Dropbox/Docs"
 alias greak="cd ~/ReaktorCode"
 alias gr=greak
 
+# Ack
 alias aa="ack --all"
+alias acof="ack --coffee"
 
 [[ -r ~/.bashrc ]] && source ~/.bashrc
 [[ -r ~/.javaconfigs ]] && source ~/.javaconfigs

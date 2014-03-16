@@ -1,5 +1,6 @@
 [core]
   editor = vim
+  precomposeunicode = false
 [user]
   name = Lauri Lehmijoki
   email = lauri.lehmijoki@iki.fi

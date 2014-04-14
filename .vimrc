@@ -144,6 +144,10 @@ function! SaveAndRun()
 endfunction
 map <F5> :call SaveAndRun()<cr>
 
+" Command-T configs
+
+let g:CommandTMaxHeight=10
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RUNNING TESTS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

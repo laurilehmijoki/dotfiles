@@ -3,3 +3,5 @@
 #
 #--ignore-dir=output/
 --type-set=coffee=.coffee
+--type-set=sass=.sass
+--type-set=hbs=.hbs

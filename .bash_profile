@@ -61,7 +61,7 @@ alias acof="ack --coffee"
 
 [[ -r ~/.bashrc ]] && source ~/.bashrc
 [[ -r ~/.javaconfigs ]] && source ~/.javaconfigs
-[[ -r ~/Dropbox/Security/aws.credentials ]] && source ~/Dropbox/Security/aws.credentials
+[[ -r ~/.credentials ]] && source ~/.credentials
 ~/bin/crontab_report
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

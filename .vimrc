@@ -95,6 +95,9 @@ imap <C-j> <space><-<space>
 
 nmap <F3> :NERDTreeToggle()<cr>
 
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
+
 " Load abbreviations
 source ~/.vim/abbreviations_ruby.vim
 

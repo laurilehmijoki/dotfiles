@@ -47,6 +47,9 @@ Bundle 'https://github.com/groenewege/vim-less.git'
 Bundle 'git://github.com/laurilehmijoki/haskellmode-vim.git'
 Bundle 'https://github.com/mileszs/ack.vim'
 Bundle 'https://github.com/guns/vim-clojure-static.git'
+" vim-jsx needs vim-javascript
+Bundle 'https://github.com/pangloss/vim-javascript.git'
+Bundle 'https://github.com/mxw/vim-jsx.git'
 
 runtime macros/matchit.vim
 

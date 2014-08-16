@@ -9,3 +9,6 @@ ANDROID_INST_DIR=~/Install/adt-bundle-mac-x86_64-20131030
 ANDROID_SDK=$ANDROID_INST_DIR/sdk/tools:$ANDROID_INST_DIR/sdk/platform-tools
 
 export PATH=/usr/local/sbin:~/bin:~/bin/local:/opt/local/bin:/opt/local/sbin:$RVM:$CABALBIN:$TOOLS:$NPM:$ANDROID_SDK:$PATH
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

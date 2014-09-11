@@ -61,6 +61,8 @@ filetype plugin indent on
 
 let mapleader = "," " , is more handy than the default leader \
 
+nmap <F3> :NERDTreeToggle()<cr>
+
 " Press F4 to toggle highlighting on/off, and show current value.
 noremap <F4> :set hlsearch! hlsearch?<cr>
 
@@ -98,8 +100,6 @@ nmap <leader>l :NERDTreeFind<cr>
 imap <C-l> <space>=><space>
 " For generators
 imap <C-j> <space><-<space>
-
-nmap <F3> :NERDTreeToggle()<cr>
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %

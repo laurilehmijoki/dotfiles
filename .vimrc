@@ -64,8 +64,8 @@ let mapleader = "," " , is more handy than the default leader \
 " Press F4 to toggle highlighting on/off, and show current value.
 noremap <F4> :set hlsearch! hlsearch?<cr>
 
-" Search and replace word under cursor using F4
-nnoremap <F4> :%s/<c-r><c-w>/<c-r><c-w>/gc<c-f>$F/i
+" Search and replace word under cursor using F6
+nnoremap <F6> :%s/<c-r><c-w>/<c-r><c-w>/gc<c-f>$F/i
 
 " Disable the arrow keys in the normal mode – using them there only slows you down. Use hkjl instead.
 map <Left> :echo "no!"<cr>

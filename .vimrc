@@ -27,7 +27,7 @@ set backupskip=/tmp/*,/private/tmp/* " Otherwise crontab editing fails
 set directory=~/.vim/.tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 " Ignore (works as Command-T ignore list, for example)
-set wildignore+=.git,*.class,.svn,*.jar,target,output
+set wildignore+=.git,*.class,.svn,*.jar,target,output,node_modules
 
 " Enable Vundle
 " 1) Install Vundle with `git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle`

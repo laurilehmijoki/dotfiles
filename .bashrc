@@ -12,3 +12,6 @@ export PATH=/usr/local/sbin:~/bin:~/bin/local:/opt/local/bin:/opt/local/sbin:$RV
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+export NVM_DIR="/Users/llehmijo/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

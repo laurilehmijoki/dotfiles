@@ -231,6 +231,8 @@ augroup vimRcExtensions
 
   autocmd! BufNewFile,BufRead */*.hbs set ft=html
 
+  autocmd! BufNewFile,BufRead */*.rs set ft=rust
+
   autocmd! BufNewFile,BufRead **/*.js set tabstop=2| set shiftwidth=2
 
   autocmd! BufNewFile,BufRead **/*.py set tabstop=2| set shiftwidth=2

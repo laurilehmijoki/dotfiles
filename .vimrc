@@ -50,6 +50,7 @@ Bundle 'https://github.com/guns/vim-clojure-static.git'
 " vim-jsx needs vim-javascript
 Bundle 'https://github.com/pangloss/vim-javascript.git'
 Bundle 'https://github.com/mxw/vim-jsx.git'
+Bundle 'https://github.com/rust-lang/rust.vim'
 
 runtime macros/matchit.vim
 

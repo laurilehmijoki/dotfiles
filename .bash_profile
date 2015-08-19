@@ -65,3 +65,5 @@ alias acof="ack --coffee"
 ~/bin/crontab_report
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+ulimit -n 2560

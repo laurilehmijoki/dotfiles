@@ -35,23 +35,7 @@ set wildignore+=.git,*.class,.svn,*.jar,target,output,node_modules
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-" After first Vundle run, finish the Command-T installation like so:
-" 1) `cd ~/.vim/bundle/command-t/ruby/command-t && ruby extconf.rb`
-" 2) `which rvm && rvm use system # Use the Ruby against which VIM was linked`
-" 2) `cd ~/.vim/bundle/command-t/ruby/command-t && make`
-Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'https://github.com/scrooloose/nerdtree'
-Bundle 'https://github.com/kchmck/vim-coffee-script.git'
-Bundle 'git://github.com/tpope/vim-surround.git'
-Bundle 'https://github.com/groenewege/vim-less.git'
-Bundle 'git://github.com/laurilehmijoki/haskellmode-vim.git'
-Bundle 'https://github.com/mileszs/ack.vim'
-Bundle 'https://github.com/guns/vim-clojure-static.git'
-" vim-jsx needs vim-javascript
-Bundle 'https://github.com/pangloss/vim-javascript.git'
-Bundle 'https://github.com/rust-lang/rust.vim'
-
-runtime macros/matchit.vim
 
 syntax on
 colorscheme desert " wombat, slate, shady and peachpuff are also nice
@@ -75,12 +59,6 @@ map <Right> :echo "no!"<cr>
 map <Up> :echo "no!"<cr>
 map <Down> :echo "no!"<cr>
 
-" Esc is so far away without this mapping...
-inoremap jj <Esc>
-imap <C-c> <Esc>
-
-map <Leader>a ggVG " Select all
-
 nnoremap <C-e> 3<C-e> " Scroll the viewpoint faster
 nnoremap <C-y> 3<C-y>
 
@@ -96,19 +74,6 @@ nmap <C-n> :bn<cr> " Next buffer
 " Locate the current file in NERDTree
 nmap <leader>l :NERDTreeFind<cr>
 
-" Hash rocket
-imap <C-l> <space>=><space>
-" For generators
-imap <C-j> <space><-<space>
-
-" Allow saving of files as sudo when I forgot to start vim using sudo.
-cmap w!! w !sudo tee > /dev/null %
-
-" Load abbreviations
-source ~/.vim/abbreviations_ruby.vim
-
-call pathogen#infect()
-
 " Alias frequently typo'ed commands
 command! WQ wq
 command! Wq wq
@@ -116,10 +81,6 @@ command! Wa wa
 command! W w
 command! Q q
 command! Qa qa
-
-" For quick editing of .vimrc
-map <leader>v :vs $MYVIMRC<cr><C-W>
-map <silent> <leader>V :source $MYVIMRC<cr>:filetype detect<cr>:exe ":echo 'vimrc reloaded'"<cr>
 
 " Rename current file
 function! RenameFile()
@@ -153,75 +114,10 @@ function! SaveAndRun()
 endfunction
 map <F5> :call SaveAndRun()<cr>
 
-" Command-T configs
-
-let g:CommandTMaxHeight=10
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" RUNNING TESTS
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <leader>r :call RunTestFile()<cr>
-map <leader>R :call RunNearestTest()<cr>
-map <leader>a :call RunTests('')<cr>
-
-function! RunTestFile(...)
-    if a:0
-        let command_suffix = a:1
-    else
-        let command_suffix = ""
-    endif
-
-    " Run the tests for the previously-marked file.
-    let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\)$') != -1
-    if in_test_file
-        call SetTestFile()
-    elseif !exists("t:grb_test_file")
-        return
-    end
-    call RunTests(t:grb_test_file . command_suffix)
-endfunction
-
-function! RunNearestTest()
-    let spec_line_number = line('.')
-    call RunTestFile(":" . spec_line_number . " -b")
-endfunction
-
-function! SetTestFile()
-    " Set the spec file that tests will be run for.
-    let t:grb_test_file=@%
-endfunction
-
-function! RunTests(filename)
-    " Write the file and run tests for the given filename
-    :w
-    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
-    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
-    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
-    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
-    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
-    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
-    if match(a:filename, '\.feature$') != -1
-        exec ":!script/features " . a:filename
-    else
-        if filereadable("script/test")
-            exec ":!script/test " . a:filename
-        elseif filereadable("Gemfile")
-            exec ":!bundle exec rspec --color " . a:filename
-        else
-            exec ":!rspec --color " . a:filename
-        end
-    end
-endfunction
-
 augroup vimRcExtensions
   autocmd!
   " Open NERDTree if no args were given to VIM
   autocmd vimenter * if !argc() | NERDTree | wincmd l | endif
-
-  " Look for template based on the file extension
-  autocmd! BufNewFile * silent! 0r ~/.vim/templates/tmpl.%:e
-
-  autocmd! BufNewFile,BufRead */*.scala set textwidth=80
 
   autocmd! BufNewFile,BufRead */*.md set filetype=Markdown
 
@@ -251,13 +147,6 @@ augroup vimRcExtensions
         \   exe "normal g`\"" |
         \ endif
 
-  " Will be slow with large set of files:
-  autocmd FocusGained * CommandTFlush
-  autocmd BufWritePost * CommandTFlush
-
   " Fix trailing whitespaces on every file write
   autocmd BufWritePost * :FixWhitespace
-
-  " For the haskellmode plugin
-  autocmd Bufenter *.hs compiler ghc | set cmdheight=1
 augroup END

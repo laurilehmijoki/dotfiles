@@ -36,6 +36,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'https://github.com/scrooloose/nerdtree'
+Bundle 'https://github.com/kchmck/vim-coffee-script.git'
 
 syntax on
 colorscheme desert " wombat, slate, shady and peachpuff are also nice

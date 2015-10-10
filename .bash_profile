@@ -17,6 +17,7 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWSTASHSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 source ~/bin/git-completion.bash
+export NODE_REPL_HISTORY_FILE=$TMPDIR/node_repl_history
 
 # Prompt
 if [ `tput cols` -ge 120 ]; then

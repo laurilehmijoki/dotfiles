@@ -5,7 +5,7 @@ NPM=/usr/local/share/npm/bin
 RVM=$HOME/.rvm/bin
 CABALBIN=$HOME/Library/Haskell/bin
 
-export ANDROID_HOME=/usr/local/opt/android-sdk # brew install android-sdk
+export ANDROID_HOME=~/Library/Android/sdk
 
 export PATH=/usr/local/sbin:~/bin:~/bin/local:/opt/local/bin:/opt/local/sbin:$RVM:$CABALBIN:$TOOLS:$NPM:$ANDROID_SDK:$PATH
 
